@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1175</width>
+    <height>743</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Phần mềm quản lý chi nhánh ngân hàng</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <widget class="QWidget" name="gridWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>-1</y>
+      <width>1181</width>
+      <height>631</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QScrollArea" name="QS_Body">
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1177</width>
+          <height>627</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1175</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuNh_n_vi_n">
+    <property name="title">
+     <string>Nhân viên</string>
+    </property>
+    <addaction name="action_add_staff"/>
+    <addaction name="action_search_staff"/>
+    <addaction name="action_payroll"/>
+   </widget>
+   <widget class="QMenu" name="menuKh_ch_h_ng">
+    <property name="title">
+     <string>Khách hàng</string>
+    </property>
+    <addaction name="action_add_customer"/>
+    <addaction name="action_search_customer"/>
+    <addaction name="action_create_account"/>
+   </widget>
+   <widget class="QMenu" name="menuGiao_d_ch">
+    <property name="title">
+     <string>Giao dịch</string>
+    </property>
+    <addaction name="action_create_transaction"/>
+    <addaction name="action_search_transaction"/>
+   </widget>
+   <widget class="QMenu" name="menuB_o_c_o">
+    <property name="title">
+     <string>Báo cáo</string>
+    </property>
+    <addaction name="action_report_ntd"/>
+    <addaction name="action_report_td"/>
+    <addaction name="action_report_total"/>
+   </widget>
+   <addaction name="menuNh_n_vi_n"/>
+   <addaction name="menuKh_ch_h_ng"/>
+   <addaction name="menuGiao_d_ch"/>
+   <addaction name="menuB_o_c_o"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_add_staff"/>
+   <addaction name="action_search_staff"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_2">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_add_customer"/>
+   <addaction name="action_search_customer"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_3">
+   <property name="windowTitle">
+    <string>toolBar_3</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_create_transaction"/>
+   <addaction name="action_search_transaction"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_4">
+   <property name="windowTitle">
+    <string>toolBar_4</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_report_ntd"/>
+   <addaction name="action_report_td"/>
+   <addaction name="action_report_total"/>
+  </widget>
+  <action name="action_add_staff">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/assets/icon/staff.png</normaloff>:/icon/assets/icon/staff.png</iconset>
+   </property>
+   <property name="text">
+    <string>Thêm nhân viên</string>
+   </property>
+  </action>
+  <action name="action_search_staff">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/assets/icon/searchstaff.png</normaloff>:/icon/assets/icon/searchstaff.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tìm kiếm nhân viên</string>
+   </property>
+  </action>
+  <action name="action_payroll">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/assets/icon/salary.png</normaloff>:/icon/assets/icon/salary.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tính lương</string>
+   </property>
+  </action>
+  <action name="action_add_customer">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/assets/icon/customer.png</normaloff>:/icon/assets/icon/customer.png</iconset>
+   </property>
+   <property name="text">
+    <string>Thêm khách hàng</string>
+   </property>
+  </action>
+  <action name="action_search_customer">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/assets/icon/searchcutomer.png</normaloff>:/icon/assets/icon/searchcutomer.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tìm kiếm khách hàng</string>
+   </property>
+  </action>
+  <action name="action_create_account">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/assets/icon/addaccount.png</normaloff>:/icon/assets/icon/addaccount.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tạo tài khoản</string>
+   </property>
+  </action>
+  <action name="action_create_transaction">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/assets/icon/transaction.png</normaloff>:/icon/assets/icon/transaction.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tạo giao dịch</string>
+   </property>
+  </action>
+  <action name="action_search_transaction">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/assets/icon/searchtransaction.png</normaloff>:/icon/assets/icon/searchtransaction.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tìm kiếm giao dịch</string>
+   </property>
+  </action>
+  <action name="action_report_ntd">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/assets/icon/report.png</normaloff>:/icon/assets/icon/report.png</iconset>
+   </property>
+   <property name="text">
+    <string>Báo cáo nợ tín dụng</string>
+   </property>
+  </action>
+  <action name="action_report_td">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/assets/icon/report2.png</normaloff>:/icon/assets/icon/report2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Báo cáo tín dụng</string>
+   </property>
+  </action>
+  <action name="action_report_total">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/assets/icon/result.png</normaloff>:/icon/assets/icon/result.png</iconset>
+   </property>
+   <property name="text">
+    <string>Báo cáo tổng tiền gửi</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
