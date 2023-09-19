@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1398</width>
-    <height>806</height>
+    <width>1175</width>
+    <height>743</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,44 +20,48 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QWidget" name="gridWidget" native="true">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QScrollArea" name="QS_Body">
-         <property name="widgetResizable">
-          <bool>true</bool>
-         </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>1360</width>
-            <height>657</height>
-           </rect>
-          </property>
-         </widget>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-   </layout>
+   <widget class="QWidget" name="gridWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>-1</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QScrollArea" name="QS_Body">
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1920</width>
+          <height>1080</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1398</width>
+     <width>1920</width>
      <height>26</height>
     </rect>
    </property>
@@ -177,7 +181,7 @@
   </widget>
   <action name="action_add_staff">
    <property name="icon">
-    <iconset>
+    <iconset resource="../resource.qrc">
      <normaloff>:/icon/assets/icon/staff.png</normaloff>:/icon/assets/icon/staff.png</iconset>
    </property>
    <property name="text">
@@ -186,7 +190,7 @@
   </action>
   <action name="action_search_staff">
    <property name="icon">
-    <iconset>
+    <iconset resource="../resource.qrc">
      <normaloff>:/icon/assets/icon/searchstaff.png</normaloff>:/icon/assets/icon/searchstaff.png</iconset>
    </property>
    <property name="text">
@@ -195,7 +199,7 @@
   </action>
   <action name="action_payroll">
    <property name="icon">
-    <iconset>
+    <iconset resource="../resource.qrc">
      <normaloff>:/icon/assets/icon/salary.png</normaloff>:/icon/assets/icon/salary.png</iconset>
    </property>
    <property name="text">
@@ -204,7 +208,7 @@
   </action>
   <action name="action_add_customer">
    <property name="icon">
-    <iconset>
+    <iconset resource="../resource.qrc">
      <normaloff>:/icon/assets/icon/customer.png</normaloff>:/icon/assets/icon/customer.png</iconset>
    </property>
    <property name="text">
@@ -213,7 +217,7 @@
   </action>
   <action name="action_search_customer">
    <property name="icon">
-    <iconset>
+    <iconset resource="../resource.qrc">
      <normaloff>:/icon/assets/icon/searchcutomer.png</normaloff>:/icon/assets/icon/searchcutomer.png</iconset>
    </property>
    <property name="text">
@@ -222,7 +226,7 @@
   </action>
   <action name="action_create_account">
    <property name="icon">
-    <iconset>
+    <iconset resource="../resource.qrc">
      <normaloff>:/icon/assets/icon/addaccount.png</normaloff>:/icon/assets/icon/addaccount.png</iconset>
    </property>
    <property name="text">
@@ -231,7 +235,7 @@
   </action>
   <action name="action_create_transaction">
    <property name="icon">
-    <iconset>
+    <iconset resource="../resource.qrc">
      <normaloff>:/icon/assets/icon/transaction.png</normaloff>:/icon/assets/icon/transaction.png</iconset>
    </property>
    <property name="text">
@@ -240,7 +244,7 @@
   </action>
   <action name="action_search_transaction">
    <property name="icon">
-    <iconset>
+    <iconset resource="../resource.qrc">
      <normaloff>:/icon/assets/icon/searchtransaction.png</normaloff>:/icon/assets/icon/searchtransaction.png</iconset>
    </property>
    <property name="text">
@@ -249,7 +253,7 @@
   </action>
   <action name="action_report_ntd">
    <property name="icon">
-    <iconset>
+    <iconset resource="../resource.qrc">
      <normaloff>:/icon/assets/icon/report.png</normaloff>:/icon/assets/icon/report.png</iconset>
    </property>
    <property name="text">
@@ -258,7 +262,7 @@
   </action>
   <action name="action_report_td">
    <property name="icon">
-    <iconset>
+    <iconset resource="../resource.qrc">
      <normaloff>:/icon/assets/icon/report2.png</normaloff>:/icon/assets/icon/report2.png</iconset>
    </property>
    <property name="text">
@@ -267,7 +271,7 @@
   </action>
   <action name="action_report_total">
    <property name="icon">
-    <iconset>
+    <iconset resource="../resource.qrc">
      <normaloff>:/icon/assets/icon/result.png</normaloff>:/icon/assets/icon/result.png</iconset>
    </property>
    <property name="text">
@@ -275,6 +279,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

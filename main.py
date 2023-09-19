@@ -15,7 +15,7 @@ class Ui(QtWidgets.QMainWindow):
         super(Ui, self).__init__()
 
         uic.loadUi('UI/MainMenu.ui', self)
-        self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
+        # self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('assets/icon/icon.png'))
 
         self.action_add_staff.setIcon(QtGui.QIcon('assets/icon/staff.png'))
@@ -38,6 +38,18 @@ class Ui(QtWidgets.QMainWindow):
 
         self.action_add_staff.triggered.connect(self.open_add_staff)
         self.action_search_staff.triggered.connect(self.open_search_staff)
+        self.action_payroll.triggered.connect(self.open_payroll)
+        self.action_add_customer.triggered.connect(self.open_add_customer)
+        self.action_search_customer.triggered.connect(
+            self.open_search_customer)
+        self.action_create_account.triggered.connect(self.open_create_account)
+        self.action_create_transaction.triggered.connect(
+            self.open_create_transaction)
+        self.action_search_transaction.triggered.connect(
+            self.open_search_transaction)
+        self.action_report_ntd.triggered.connect(self.open_report_ntd)
+        self.action_report_td.triggered.connect(self.open_report_td)
+        self.action_report_total.triggered.connect(self.open_report_total)
         self.QS_Body.showFullScreen()
 
         self.show()
@@ -65,6 +77,51 @@ class Ui(QtWidgets.QMainWindow):
     def open_search_staff(self):
         child_window = NhanVien.TimKiemNhanVien()
         title = "Tìm kiếm nhân viên"
+        self.show_child(child_window, title)
+
+    def open_payroll(self):
+        child_window = TruyVan.TinhLuong()
+        title = "Tính lương nhân viên"
+        self.show_child(child_window, title)
+
+    def open_add_customer(self):
+        child_window = KhachHang.ThemKhachHang()
+        title = "Thêm khách hàng"
+        self.show_child(child_window, title)
+
+    def open_search_customer(self):
+        child_window = KhachHang.TimKiemKhachHang()
+        title = "Tìm kiếm khách hàng"
+        self.show_child(child_window, title)
+
+    def open_create_account(self):
+        child_window = TaiKhoan.ThemTaiKhoan()
+        title = "Tạo tài khoản"
+        self.show_child(child_window, title)
+
+    def open_create_transaction(self):
+        child_window = GiaoDich.ThemGiaoDich()
+        title = "Thêm giao dịch"
+        self.show_child(child_window, title)
+
+    def open_search_transaction(self):
+        child_window = GiaoDich.TimKiemGiaoDich()
+        title = "Thêm giao dịch"
+        self.show_child(child_window, title)
+
+    def open_report_ntd(self):
+        child_window = TruyVan.LietKeNoTinDung()
+        title = "Nợ tín dụng"
+        self.show_child(child_window, title)
+
+    def open_report_td(self):
+        child_window = TruyVan.LietKeTinDung()
+        title = "Tín dụng"
+        self.show_child(child_window, title)
+
+    def open_report_total(self):
+        child_window = TruyVan.LietKeTongTienGui()
+        title = "Tổng tiền gửi"
         self.show_child(child_window, title)
 
 
