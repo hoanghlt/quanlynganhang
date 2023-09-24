@@ -1,7 +1,9 @@
 import sys
 
-from PyQt5 import QtWidgets, uic, QtGui, QtCore
-from PyQt5.QtWidgets import QVBoxLayout, QWidget, QSizePolicy
+from PyQt5 import QtWidgets, uic, QtGui
+from PyQt5.QtWidgets import QVBoxLayout, QWidget, QSizePolicy, QLabel, QScrollArea
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import Qt
 
 import GiaoDich
 import KhachHang
@@ -50,22 +52,48 @@ class Ui(QtWidgets.QMainWindow):
         self.action_report_ntd.triggered.connect(self.open_report_ntd)
         self.action_report_td.triggered.connect(self.open_report_td)
         self.action_report_total.triggered.connect(self.open_report_total)
+
+        self.QS_Body.setWidgetResizable(True)
+
+        # Tạo một QWidget để chứa QLabel
+        container = QWidget()
+        self.QS_Body.setWidget(container)
+
+        # Tạo một QVBoxLayout cho QWidget
+        layout = QVBoxLayout(container)
+
+        # Tạo một QLabel để hiển thị hình ảnh
+        label = QLabel(self)
+
+        # Đặt hình ảnh cho QLabel và làm nó lấp đầy QLabel
+        pixmap = QPixmap('assets/icon/hinhnen.jpg')
+        label.setPixmap(pixmap)
+        label.setAlignment(Qt.AlignCenter)
+        # Làm cho hình ảnh tự điều chỉnh để lấp đầy QLabel
+        label.setScaledContents(True)
+
+        # Thêm QLabel vào QVBoxLayout
+        layout.addWidget(label)
+
+        # Đặt QVBoxLayout làm nội dung cho container
+        container.setLayout(layout)
+
+        # Đặt container làm nội dung cho QScrollArea
+        self.QS_Body.setWidget(container)
+
         self.QS_Body.showFullScreen()
 
         self.show()
 
     def show_child(self, child_window, title):
-        # Tạo QVBoxLayout để chứa UI con
-        layout = QVBoxLayout()
-        layout.addWidget(child_window)
-
-        # Tạo QWidget để chứa QVBoxLayout
-        container = QWidget()
-        container.setLayout(layout)
-        container.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        self.QS_Body = QScrollArea(self)
+        self.QS_Body.setWidgetResizable(True)
 
         # Thêm container vào QScrollArea
-        self.QS_Body.setWidget(container)
+        self.QS_Body.setWidget(child_window)
+
+        self.setCentralWidget(self.QS_Body)
+
         self.QS_Body.setWindowTitle(title)
         self.QS_Body.showFullScreen()
 

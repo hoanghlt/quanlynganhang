@@ -2,6 +2,7 @@ import sys
 
 import mysql.connector
 from PyQt5 import QtWidgets, uic, QtGui, QtCore
+from PyQt5.QtWidgets import QHeaderView
 from mysql.connector import Error
 
 with open("config.txt", "r") as f:
@@ -42,7 +43,7 @@ class ThemKhachHang(QtWidgets.QDialog):
 
         mycursor.close()
 
-        self.textEdit.setPlainText(str(res[0]))
+        self.textEdit_1.setPlainText(str(res[0]))
 
         self.show()
 
@@ -78,7 +79,8 @@ class ThemKhachHang(QtWidgets.QDialog):
             if self.comboBox.currentText() == "Khách hàng cá nhân":
                 mycursor = mydb.cursor()
 
-                mycursor.callproc("ThemKhachHangCaNhan", [ma_kh, ten_khach_hang, dia_chi, sdt, nghe_nghiep, thu_nhap, ])
+                mycursor.callproc("ThemKhachHangCaNhan", [
+                                  ma_kh, ten_khach_hang, dia_chi, sdt, nghe_nghiep, thu_nhap, ])
 
                 mydb.commit()
                 mycursor.close()
@@ -136,7 +138,8 @@ class SuaKhachHang(QtWidgets.QDialog):
             if self.comboBox.currentText() == "Khách hàng cá nhân":
                 mycursor = mydb.cursor()
 
-                mycursor.callproc("SuaKhachHangCaNhan", [ma_kh, ten_khach_hang, dia_chi, sdt, nghe_nghiep, thu_nhap, ])
+                mycursor.callproc("SuaKhachHangCaNhan", [
+                                  ma_kh, ten_khach_hang, dia_chi, sdt, nghe_nghiep, thu_nhap, ])
 
                 mydb.commit()
                 mycursor.close()
@@ -225,9 +228,11 @@ class TimKiemKhachHang(QtWidgets.QDialog):
             mycursor = mydb.cursor()
 
             if self.comboBox.currentText() == "Khách hàng cá nhân":
-                mycursor.callproc("TimKiemKhachHangCaNhan", [ma_kh, ten, sdt, ])
+                mycursor.callproc("TimKiemKhachHangCaNhan",
+                                  [ma_kh, ten, sdt, ])
             else:
-                mycursor.callproc("TimKiemKhachHangToChucDoanhNghiep", [ma_kh, ten, sdt, ])
+                mycursor.callproc("TimKiemKhachHangToChucDoanhNghiep", [
+                                  ma_kh, ten, sdt, ])
 
             myresult = mycursor.stored_results()
 
@@ -238,30 +243,58 @@ class TimKiemKhachHang(QtWidgets.QDialog):
                     rowPosition = self.tableWidget.rowCount()
                     self.tableWidget.insertRow(rowPosition)
 
-                    self.tableWidget.setItem(rowPosition, 0, QtWidgets.QTableWidgetItem(str(x[0])))
-                    self.tableWidget.setItem(rowPosition, 1, QtWidgets.QTableWidgetItem(str(x[1])))
-                    self.tableWidget.setItem(rowPosition, 2, QtWidgets.QTableWidgetItem(str(x[2])))
-                    self.tableWidget.setItem(rowPosition, 3, QtWidgets.QTableWidgetItem(str(x[4])))
-                    self.tableWidget.setItem(rowPosition, 4, QtWidgets.QTableWidgetItem(str(x[6])))
-                    self.tableWidget.setItem(rowPosition, 5, QtWidgets.QTableWidgetItem(str(x[7])))
+                    self.tableWidget.setItem(
+                        rowPosition, 0, QtWidgets.QTableWidgetItem(str(x[0])))
+                    self.tableWidget.setItem(
+                        rowPosition, 1, QtWidgets.QTableWidgetItem(str(x[1])))
+                    self.tableWidget.setItem(
+                        rowPosition, 2, QtWidgets.QTableWidgetItem(str(x[2])))
+                    self.tableWidget.setItem(
+                        rowPosition, 3, QtWidgets.QTableWidgetItem(str(x[4])))
+                    self.tableWidget.setItem(
+                        rowPosition, 4, QtWidgets.QTableWidgetItem(str(x[6])))
+                    self.tableWidget.setItem(
+                        rowPosition, 5, QtWidgets.QTableWidgetItem(str(x[7])))
 
                     self.tableWidget.item(rowPosition, 0).setTextAlignment(
                         QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
                     self.tableWidget.item(rowPosition, 1).setTextAlignment(
-                        QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
                     self.tableWidget.item(rowPosition, 2).setTextAlignment(
-                        QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
                     self.tableWidget.item(rowPosition, 3).setTextAlignment(
                         QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
                     self.tableWidget.item(rowPosition, 4).setTextAlignment(
-                        QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
                     self.tableWidget.item(rowPosition, 5).setTextAlignment(
                         QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+
+            self.autosizeColumns(self.tableWidget)
+            self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
         except Error as e:
             msg = QtWidgets.QMessageBox()
             msg.setWindowTitle("Lỗi")
             msg.setText(e.msg)
             msg.exec_()
+
+    def autosizeColumns(self, tableWidget):
+        total_width = tableWidget.verticalHeader().width()  # Bao gồm cả cột index
+        total_width += tableWidget.horizontalHeader().length()  # Bao gồm cả hàng index
+
+        for col in range(tableWidget.columnCount()):
+            total_width += tableWidget.columnWidth(col)
+
+        viewport_width = tableWidget.viewport().width()
+        if total_width > viewport_width:
+            ratio = viewport_width / total_width
+            for col in range(tableWidget.columnCount()):
+                tableWidget.setColumnWidth(
+                    col, int(tableWidget.columnWidth(col) * ratio))
+        else:
+            for col in range(tableWidget.columnCount()):
+                tableWidget.setColumnWidth(
+                    col, tableWidget.horizontalHeader().defaultSectionSize())
 
     def on_click_table(self, item):
         dialog = SuaKhachHang()
@@ -269,12 +302,18 @@ class TimKiemKhachHang(QtWidgets.QDialog):
 
         dialog.comboBox.setCurrentText(self.comboBox.currentText())
 
-        dialog.textEdit.setPlainText(self.tableWidget.item(item.row(), 0).text())
-        dialog.textEdit_2.setPlainText(self.tableWidget.item(item.row(), 1).text())
-        dialog.textEdit_3.setPlainText(self.tableWidget.item(item.row(), 2).text())
-        dialog.textEdit_4.setPlainText(self.tableWidget.item(item.row(), 3).text())
-        dialog.textEdit_5.setPlainText(self.tableWidget.item(item.row(), 4).text())
-        dialog.textEdit_6.setPlainText(self.tableWidget.item(item.row(), 5).text())
+        dialog.textEdit.setPlainText(
+            self.tableWidget.item(item.row(), 0).text())
+        dialog.textEdit_2.setPlainText(
+            self.tableWidget.item(item.row(), 1).text())
+        dialog.textEdit_3.setPlainText(
+            self.tableWidget.item(item.row(), 2).text())
+        dialog.textEdit_4.setPlainText(
+            self.tableWidget.item(item.row(), 3).text())
+        dialog.textEdit_5.setPlainText(
+            self.tableWidget.item(item.row(), 4).text())
+        dialog.textEdit_6.setPlainText(
+            self.tableWidget.item(item.row(), 5).text())
 
         dialog.exec_()
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1398</width>
+    <width>1456</width>
     <height>806</height>
    </rect>
   </property>
@@ -40,7 +40,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>1360</width>
+            <width>1418</width>
             <height>657</height>
            </rect>
           </property>
@@ -57,7 +57,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1398</width>
+     <width>1456</width>
      <height>26</height>
     </rect>
    </property>
@@ -67,7 +67,6 @@
     </property>
     <addaction name="action_add_staff"/>
     <addaction name="action_search_staff"/>
-    <addaction name="action_payroll"/>
    </widget>
    <widget class="QMenu" name="menuKh_ch_h_ng">
     <property name="title">
