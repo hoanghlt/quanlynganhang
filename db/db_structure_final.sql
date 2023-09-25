@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `chinhanhnganhang` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `chinhanhnganhang`;
+CREATE DATABASE  IF NOT EXISTS `quanlynganhang` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `quanlynganhang`;
 -- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: localhost    Database: chinhanhnganhang
+-- Host: localhost    Database: quanlynganhang
 -- ------------------------------------------------------
 -- Server version	8.0.29
 
@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `giaodichcanhan`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `giaodichcanhan` (
   `MaGD` int NOT NULL AUTO_INCREMENT,
-  `SoTien` int DEFAULT NULL,
+  `SoTien` decimal(15,0) DEFAULT 0,
   `LoaiGD` varchar(255) DEFAULT NULL,
   `PhuongThuc` varchar(255) DEFAULT NULL,
   `ThoiGianThucHien` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -77,32 +77,32 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaGD, res);
+    call quanlynganhang.IsNumber(new.MaGD, res);
     if res = false then
 		set msg = concat("Mã giao dịch ", cast(new.MaGD as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.SoTien, res);
+    call quanlynganhang.IsNumber(new.SoTien, res);
     if res = false then
 		set msg = concat("Số tiền ", cast(new.SoTien as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaKHCN, res);
+    call quanlynganhang.IsNumber(new.MaKHCN, res);
     if res = false then
 		set msg = concat("Mã khách hàng ", cast(new.MaKHCN as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaNV, res);
+    call quanlynganhang.IsNumber(new.MaNV, res);
     if res = false then
 		set msg = concat("Mã nhân viên ", cast(new.MaNV as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaTKTD, res);
-    call chinhanhnganhang.IsNumber(new.MaTKGT, res1);
+    call quanlynganhang.IsNumber(new.MaTKTD, res);
+    call quanlynganhang.IsNumber(new.MaTKGT, res1);
     if res = false and res1 = false then
 		set msg = "Mã tài khoản không hợp lệ";
         signal sqlstate "45000" set message_text = msg;
@@ -210,7 +210,7 @@ CREATE TABLE `giaodichcanhan_log` (
   `ThoiGian` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ThaoTac` varchar(45) NOT NULL,
   `MaGD` int NOT NULL,
-  `SoTien` int DEFAULT NULL,
+  `SoTien` decimal(15,0) DEFAULT 0,
   `LoaiGD` varchar(255) DEFAULT NULL,
   `PhuongThuc` varchar(255) DEFAULT NULL,
   `ThoiGianThucHien` datetime DEFAULT NULL,
@@ -241,7 +241,7 @@ DROP TABLE IF EXISTS `giaodichtochucdoanhnghiep`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `giaodichtochucdoanhnghiep` (
   `MaGD` int NOT NULL AUTO_INCREMENT,
-  `SoTien` int DEFAULT NULL,
+  `SoTien` decimal(15,0) DEFAULT 0,
   `LoaiGD` varchar(255) DEFAULT NULL,
   `PhuongThuc` varchar(255) DEFAULT NULL,
   `ThoiGianThucHien` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -293,34 +293,34 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaGD, res);
+    call quanlynganhang.IsNumber(new.MaGD, res);
     
     if res = false then
 		set msg = concat("Mã giao dịch ", cast(new.MaGD as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.SoTien, res);
+    call quanlynganhang.IsNumber(new.SoTien, res);
     
     if res = false then
 		set msg = concat("Số tiền ", cast(new.SoTien as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaKHTCDN, res);
+    call quanlynganhang.IsNumber(new.MaKHTCDN, res);
     if res = false then
 		set msg = concat("Mã khách hàng ", cast(new.MaKHTCDN as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaNV, res);
+    call quanlynganhang.IsNumber(new.MaNV, res);
     if res = false then
 		set msg = concat("Mã nhân viên ", cast(new.MaNV as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaTKVT, res);
-    call chinhanhnganhang.IsNumber(new.MaTKGT, res1);
+    call quanlynganhang.IsNumber(new.MaTKVT, res);
+    call quanlynganhang.IsNumber(new.MaTKGT, res1);
     if res = false and res1 = false then
 		set msg = concat("Mã tài khoản không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -431,7 +431,7 @@ CREATE TABLE `giaodichtochucdoanhnghiep_log` (
   `ThoiGian` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ThaoTac` varchar(45) NOT NULL,
   `MaGD` int NOT NULL,
-  `SoTien` int DEFAULT NULL,
+  `SoTien` decimal(15,0) DEFAULT 0,
   `LoaiGD` varchar(255) DEFAULT NULL,
   `PhuongThuc` varchar(255) DEFAULT NULL,
   `ThoiGianThucHien` datetime DEFAULT NULL,
@@ -497,7 +497,7 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaKH, res);
+    call quanlynganhang.IsNumber(new.MaKH, res);
     if res = false then
 		set msg = concat("Mã khách hàng ", cast(new.MaKH as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -695,13 +695,13 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaKH, res);
+    call quanlynganhang.IsNumber(new.MaKH, res);
     if res = false then
 		set msg = concat("Mã khách hàng ", cast(new.MaKH as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsPhoneNumber(new.Sdt, res);
+    call quanlynganhang.IsPhoneNumber(new.Sdt, res);
     if res = false then
 		set msg = concat("Số điện thoại ", cast(new.Sdt as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -750,7 +750,7 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsPhoneNumber(new.Sdt, res);
+    call quanlynganhang.IsPhoneNumber(new.Sdt, res);
     if res = false then
 		set msg = concat("Số điện thoại ", cast(new.Sdt as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -860,7 +860,7 @@ DROP TABLE IF EXISTS `khachhangcanhan`;
 CREATE TABLE `khachhangcanhan` (
   `MaKHCN` int NOT NULL,
   `NgheNghiep` varchar(255) DEFAULT NULL,
-  `ThuNhap` varchar(255) DEFAULT NULL,
+  `ThuNhap` decimal(15,0) DEFAULT 0,
   PRIMARY KEY (`MaKHCN`),
   CONSTRAINT `MaKHCN` FOREIGN KEY (`MaKHCN`) REFERENCES `khachhang` (`MaKH`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -895,7 +895,7 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaKHCN, res);
+    call quanlynganhang.IsNumber(new.MaKHCN, res);
     if res = false then
 		set msg = concat("Mã khách hàng ", cast(new.MaKHCN as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -1023,8 +1023,8 @@ CREATE TABLE `khachhangcanhan_log` (
   `MaKHCN` int NOT NULL,
   `NgheNghiep_old` varchar(255) DEFAULT NULL,
   `NgheNghiep_new` varchar(255) DEFAULT NULL,
-  `ThuNhap_old` varchar(255) DEFAULT NULL,
-  `ThuNhap_new` varchar(255) DEFAULT NULL,
+  `ThuNhap_old` decimal(15,0) DEFAULT 0,
+  `ThuNhap_new` decimal(15,0) DEFAULT 0,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1049,7 +1049,7 @@ DROP TABLE IF EXISTS `khachhangtochucdoanhnghiep`;
 CREATE TABLE `khachhangtochucdoanhnghiep` (
   `MaKHTCDN` int NOT NULL,
   `NguoiDaiDien` varchar(255) DEFAULT NULL,
-  `QuyMo` varchar(255) DEFAULT NULL,
+  `QuyMo` decimal(15,0) DEFAULT 0,
   PRIMARY KEY (`MaKHTCDN`),
   CONSTRAINT `MaKHTCDN` FOREIGN KEY (`MaKHTCDN`) REFERENCES `khachhang` (`MaKH`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -1084,7 +1084,7 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaKHTCDN, res);
+    call quanlynganhang.IsNumber(new.MaKHTCDN, res);
     if res = false then
 		set msg = concat("Mã khách hàng ", cast(new.MaKHTCDN as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -1212,8 +1212,8 @@ CREATE TABLE `khachhangtochucdoanhnghiep_log` (
   `MaKHTCDN` int NOT NULL,
   `NguoiDaiDien_old` varchar(255) DEFAULT NULL,
   `NguoiDaiDien_new` varchar(255) DEFAULT NULL,
-  `QuyMo_old` varchar(255) DEFAULT NULL,
-  `QuyMo_new` varchar(255) DEFAULT NULL,
+  `QuyMo_old` decimal(15,0) DEFAULT 0,
+  `QuyMo_new` decimal(15,0) DEFAULT 0,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1273,7 +1273,7 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaNV, res);
+    call quanlynganhang.IsNumber(new.MaNV, res);
     if res = false then
 		set msg = concat("Mã nhân viên ", cast(new.MaNV as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -1463,13 +1463,13 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaNV, res);
+    call quanlynganhang.IsNumber(new.MaNV, res);
     if res = false then
 		set msg = concat("Mã nhân viên ", cast(new.MaNV as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsPhoneNumber(new.Sdt, res);
+    call quanlynganhang.IsPhoneNumber(new.Sdt, res);
     if res = false then
 		set msg = concat("Số điện thoại ", cast(new.Sdt as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -1518,7 +1518,7 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsPhoneNumber(new.Sdt, res);
+    call quanlynganhang.IsPhoneNumber(new.Sdt, res);
     if res = false then
 		set msg = concat("Số điện thoại ", cast(new.Sdt as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -1675,26 +1675,26 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaSH, res);
+    call quanlynganhang.IsNumber(new.MaSH, res);
     if res = false then
 		set msg = concat("Mã sở hữu ", cast(new.MaSH as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaKHCN, res);
+    call quanlynganhang.IsNumber(new.MaKHCN, res);
     if res = false then
 		set msg = concat("Mã khách hàng ", cast(new.MaKHCN as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaNV, res);
+    call quanlynganhang.IsNumber(new.MaNV, res);
     if res = false then
 		set msg = concat("Mã nhân viên ", cast(new.MaNV as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaTKTD, res);
-    call chinhanhnganhang.IsNumber(new.MaTKGT, res1);
+    call quanlynganhang.IsNumber(new.MaTKTD, res);
+    call quanlynganhang.IsNumber(new.MaTKGT, res1);
     if res = false and res1 = false then
 		set msg = concat("Mã tài khoản không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -1782,20 +1782,20 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaKHCN, res);
+    call quanlynganhang.IsNumber(new.MaKHCN, res);
     if res = false then
 		set msg = concat("Mã khách hàng ", cast(new.MaKHCN as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaNV, res);
+    call quanlynganhang.IsNumber(new.MaNV, res);
     if res = false then
 		set msg = concat("Mã nhân viên ", cast(new.MaNV as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaTKTD, res);
-    call chinhanhnganhang.IsNumber(new.MaTKGT, res1);
+    call quanlynganhang.IsNumber(new.MaTKTD, res);
+    call quanlynganhang.IsNumber(new.MaTKGT, res1);
     if res = false and res1 = false then
 		set msg = concat("Mã tài khoản không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -1955,26 +1955,26 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaSH, res);
+    call quanlynganhang.IsNumber(new.MaSH, res);
     if res = false then
 		set msg = concat("Mã sở hữu ", cast(new.MaSH as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaKHTCDN, res);
+    call quanlynganhang.IsNumber(new.MaKHTCDN, res);
     if res = false then
 		set msg = concat("Mã khách hàng ", cast(new.MaKHTCDN as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaNV, res);
+    call quanlynganhang.IsNumber(new.MaNV, res);
     if res = false then
 		set msg = concat("Mã nhân viên ", cast(new.MaNV as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaTKVT, res);
-    call chinhanhnganhang.IsNumber(new.MaTKGT, res1);
+    call quanlynganhang.IsNumber(new.MaTKVT, res);
+    call quanlynganhang.IsNumber(new.MaTKGT, res1);
     if res = false and res1 = false then
 		set msg = concat("Mã tài khoản không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -2062,20 +2062,20 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaKHTCDN, res);
+    call quanlynganhang.IsNumber(new.MaKHTCDN, res);
     if res = false then
 		set msg = concat("Mã khách hàng ", cast(new.MaKHTCDN as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaNV, res);
+    call quanlynganhang.IsNumber(new.MaNV, res);
     if res = false then
 		set msg = concat("Mã nhân viên ", cast(new.MaNV as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaTKVT, res);
-    call chinhanhnganhang.IsNumber(new.MaTKGT, res1);
+    call quanlynganhang.IsNumber(new.MaTKVT, res);
+    call quanlynganhang.IsNumber(new.MaTKGT, res1);
     if res = false and res1 = false then
 		set msg = concat("Mã tài khoản không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -2221,7 +2221,7 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaTK, res);
+    call quanlynganhang.IsNumber(new.MaTK, res);
     if res = false then
 		set msg = concat("Mã tài khoản ", cast(new.MaTK as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -2417,7 +2417,7 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaTKGT, res);
+    call quanlynganhang.IsNumber(new.MaTKGT, res);
     if res = false then
 		set msg = concat("Mã tài khoản ", cast(new.MaTKGT as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -2606,7 +2606,7 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaTKTD, res);
+    call quanlynganhang.IsNumber(new.MaTKTD, res);
     if res = false then
 		set msg = concat("Mã tài khoản ", cast(new.MaTKTD as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -2795,7 +2795,7 @@ DELIMITER ;;
         signal sqlstate "45000" set message_text = msg;
 	end if;
     
-    call chinhanhnganhang.IsNumber(new.MaTKVT, res);
+    call quanlynganhang.IsNumber(new.MaTKVT, res);
     if res = false then
 		set msg = concat("Mã tài khoản ", cast(new.MaTKVT as char), " không hợp lệ");
         signal sqlstate "45000" set message_text = msg;
@@ -2941,11 +2941,11 @@ INSERT INTO `taikhoanvaytien_log` VALUES (11,'2022-08-15 09:56:06','Insert',11,N
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'chinhanhnganhang'
+-- Dumping events for database 'quanlynganhang'
 --
 
 --
--- Dumping routines for database 'chinhanhnganhang'
+-- Dumping routines for database 'quanlynganhang'
 --
 /*!50003 DROP PROCEDURE IF EXISTS `IsNumber` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;

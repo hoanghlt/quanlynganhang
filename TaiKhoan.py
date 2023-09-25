@@ -1,30 +1,10 @@
-import mysql.connector
 from PyQt5 import QtWidgets, uic, QtGui, QtCore
 from mysql.connector import Error
-
-with open("config.txt", "r") as f:
-    user = f.readline().rstrip()
-    password = f.readline().rstrip()
-
-try:
-    mydb = mysql.connector.connect(host='localhost',
-                                   database='chinhanhnganhang',
-                                   user=user,
-                                   password=password)
-    if mydb.is_connected():
-        db_Info = mydb.get_server_info()
-        print("Connected to MySQL Server version ", db_Info)
-        cursor = mydb.cursor()
-        cursor.execute("select database();")
-        record = cursor.fetchone()
-        print("You're connected to database: ", record)
-
-except Error as e:
-    print("Error while connecting to MySQL", e)
-
+from SqlHelper import close_db_connection, create_db_connection
 
 class ThemTaiKhoan(QtWidgets.QDialog):
-    def __init__(self):
+    def __init__(self):   
+        self.db_connection = create_db_connection()     
         super(ThemTaiKhoan, self).__init__()
         uic.loadUi('UI/ThemTaiKhoan.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
@@ -35,13 +15,12 @@ class ThemTaiKhoan(QtWidgets.QDialog):
         self.comboBox.currentTextChanged.connect(self.on_combobox_changed)
         self.comboBox_2.currentTextChanged.connect(self.on_combobox_changed2)
 
-        mycursor = mydb.cursor()
+        if self.db_connection:
+            mycursor = self.db_connection.cursor()
 
-        res = mycursor.callproc("TaoMaTK", [0, ])
-
-        mycursor.close()
-
-        self.textEdit.setPlainText(str(res[0]))
+            res = mycursor.callproc("TaoMaTK", [0, ])
+            self.textEdit.setPlainText(str(res[0]))
+            close_db_connection(mycursor)  
 
         self.textEdit_3.setDisabled(False)
         self.textEdit_6.setDisabled(False)
@@ -112,37 +91,41 @@ class ThemTaiKhoan(QtWidgets.QDialog):
             ma_nv = self.textEdit_8.toPlainText().rstrip()
 
             if self.comboBox_2.currentText() == "Tài khoản tín dụng":
-                mycursor = mydb.cursor()
+                if self.db_connection:
+                    mycursor = self.db_connection.cursor()
 
-                mycursor.callproc("ThemTaiKhoanTinDung", [ma_kh, ma_nv, ma_tk, hang_tk, han_muc, so_no, ])
+                    mycursor.callproc("ThemTaiKhoanTinDung", [ma_kh, ma_nv, ma_tk, hang_tk, han_muc, so_no, ])
 
-                mydb.commit()
-                mycursor.close()
+                    self.db_connection.commit()
+                    close_db_connection(mycursor)
 
             if self.comboBox_2.currentText() == "Tài khoản vay tiền":
-                mycursor = mydb.cursor()
+                if self.db_connection:
+                    mycursor = self.db_connection.cursor()
 
-                mycursor.callproc("ThemTaiKhoanVayTien", [ma_kh, ma_nv, ma_tk, hang_tk, lai_suat, so_no, ])
+                    mycursor.callproc("ThemTaiKhoanVayTien", [ma_kh, ma_nv, ma_tk, hang_tk, lai_suat, so_no, ])
 
-                mydb.commit()
-                mycursor.close()
+                    self.db_connection.commit()
+                    close_db_connection(mycursor)
 
             if self.comboBox_2.currentText() == "Tài khoản gửi tiền":
                 if self.comboBox.currentText() == "Khách hàng cá nhân":
-                    mycursor = mydb.cursor()
+                    if self.db_connection:
+                        mycursor = self.db_connection.cursor()
 
-                    mycursor.callproc("ThemTaiKhoanGuiTienCaNhan", [ma_kh, ma_nv, ma_tk, hang_tk, so_du, lai_suat, ])
+                        mycursor.callproc("ThemTaiKhoanGuiTienCaNhan", [ma_kh, ma_nv, ma_tk, hang_tk, so_du, lai_suat, ])
 
-                    mydb.commit()
-                    mycursor.close()
+                        self.db_connection.commit()
+                        close_db_connection(mycursor)
                 else:
-                    mycursor = mydb.cursor()
+                    if self.db_connection:
+                        mycursor = self.db_connection.cursor()
 
-                    mycursor.callproc("ThemTaiKhoanGuiTienToChucDoanhNghiep",
-                                      [ma_kh, ma_nv, ma_tk, hang_tk, so_du, lai_suat, ])
+                        mycursor.callproc("ThemTaiKhoanGuiTienToChucDoanhNghiep",
+                                        [ma_kh, ma_nv, ma_tk, hang_tk, so_du, lai_suat, ])
 
-                    mydb.commit()
-                    mycursor.close()
+                        self.db_connection.commit()
+                        close_db_connection(mycursor)
 
             msg = QtWidgets.QMessageBox()
             msg.setWindowTitle("Thông báo")
@@ -162,6 +145,7 @@ class ThemTaiKhoan(QtWidgets.QDialog):
 
 class TimKiemTaiKhoan(QtWidgets.QDialog):
     def __init__(self):
+        self.db_connection = create_db_connection()     
         super(TimKiemTaiKhoan, self).__init__()
         uic.loadUi('UI/TimKiemTaiKhoan.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)

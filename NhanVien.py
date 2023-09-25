@@ -2,30 +2,11 @@ from PyQt5 import QtWidgets, uic, QtGui, QtCore
 import sys
 import mysql.connector
 from mysql.connector import Error
-
-with open("config.txt", "r") as f:
-    user = f.readline().rstrip()
-    password = f.readline().rstrip()
-
-try:
-    mydb = mysql.connector.connect(host='localhost',
-                                   database='chinhanhnganhang',
-                                   user=user,
-                                   password=password)
-    if mydb.is_connected():
-        db_Info = mydb.get_server_info()
-        print("Connected to MySQL Server version ", db_Info)
-        cursor = mydb.cursor()
-        cursor.execute("select database();")
-        record = cursor.fetchone()
-        print("You're connected to database: ", record)
-
-except Error as e:
-    print("Error while connecting to MySQL", e)
-
+from SqlHelper import create_db_connection, close_db_connection
 
 class ThemNhanVien(QtWidgets.QDialog):
     def __init__(self):
+        self.db_connection = create_db_connection()
         super(ThemNhanVien, self).__init__()
         uic.loadUi('UI/ThemNhanVien.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
@@ -34,13 +15,11 @@ class ThemNhanVien(QtWidgets.QDialog):
         self.pushButton.clicked.connect(self.on_click_save_button)
         self.pushButton_2.clicked.connect(self.on_click_cancel_button)
 
-        mycursor = mydb.cursor()
-
-        res = mycursor.callproc("TaoMaNV", [0, ])
-
-        mycursor.close()
-
-        self.textEdit.setPlainText(str(res[0]))
+        if self.db_connection:
+            mycursor = self.db_connection.cursor()
+            res = mycursor.callproc("TaoMaNV", [0, ])            
+            self.textEdit.setPlainText(str(res[0]))
+            close_db_connection(mycursor)
 
         self.show()
 
@@ -51,13 +30,11 @@ class ThemNhanVien(QtWidgets.QDialog):
             dia_chi = self.textEdit_3.toPlainText().rstrip()
             sdt = self.textEdit_4.toPlainText().rstrip()
             cap_bac = self.textEdit_5.toPlainText().rstrip()
-
-            mycursor = mydb.cursor()
-
-            mycursor.callproc("ThemNhanVien", [ma_nv, ten_nhan_vien, dia_chi, cap_bac, sdt, ])
-
-            mydb.commit()
-            mycursor.close()
+            if self.db_connection:
+                mycursor = self.db_connection.cursor()
+                mycursor.callproc("ThemNhanVien", [ma_nv, ten_nhan_vien, dia_chi, cap_bac, sdt, ])
+                self.db_connection.commit()
+                close_db_connection(mycursor)
 
             msg = QtWidgets.QMessageBox()
             msg.setWindowTitle("Thông báo")
@@ -77,6 +54,7 @@ class ThemNhanVien(QtWidgets.QDialog):
 
 class SuaNhanVien(QtWidgets.QDialog):
     def __init__(self):
+        self.db_connection = create_db_connection()
         super(SuaNhanVien, self).__init__()
         uic.loadUi('UI/SuaNhanVien.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
@@ -98,12 +76,12 @@ class SuaNhanVien(QtWidgets.QDialog):
             sdt = self.textEdit_4.toPlainText().rstrip()
             cap_bac = self.textEdit_5.toPlainText().rstrip()
 
-            mycursor = mydb.cursor()
-
-            mycursor.callproc("SuaNhanVien", [ma_nv, ten_nhan_vien, dia_chi, cap_bac, sdt, ])
-
-            mydb.commit()
-
+            if self.db_connection:
+                mycursor = self.db_connection.cursor()
+                mycursor.callproc("SuaNhanVien", [ma_nv, ten_nhan_vien, dia_chi, cap_bac, sdt, ])
+                self.db_connection.commit()                
+                close_db_connection(mycursor)
+                
             msg = QtWidgets.QMessageBox()
             msg.setWindowTitle("Thông báo")
             msg.setText("Sửa thành công")
@@ -121,12 +99,11 @@ class SuaNhanVien(QtWidgets.QDialog):
         try:
             ma_nv = self.textEdit.toPlainText().rstrip()
 
-            mycursor = mydb.cursor()
-
-            mycursor.callproc("XoaNhanVien", [ma_nv, ])
-
-            mydb.commit()
-            mycursor.close()
+            if self.db_connection:
+                mycursor = self.db_connection.cursor()
+                mycursor.callproc("XoaNhanVien", [ma_nv, ])
+                self.db_connection.commit()
+                close_db_connection(mycursor)
 
             msg = QtWidgets.QMessageBox()
             msg.setWindowTitle("Thông báo")
@@ -147,6 +124,7 @@ class SuaNhanVien(QtWidgets.QDialog):
 
 class TimKiemNhanVien(QtWidgets.QDialog):
     def __init__(self):
+        self.db_connection = create_db_connection()
         super(TimKiemNhanVien, self).__init__()
         uic.loadUi('UI/TimKiemNhanVien.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
@@ -165,30 +143,31 @@ class TimKiemNhanVien(QtWidgets.QDialog):
             sdt = self.textEdit_4.toPlainText().rstrip()
             cap_bac = self.textEdit_5.toPlainText().rstrip()
 
-            mycursor = mydb.cursor()
+            if self.db_connection:
+                mycursor = self.db_connection.cursor()
+                mycursor.callproc("TimKiemNhanVien", [ma_nv, ten_nhan_vien, dia_chi, cap_bac, sdt, ])
+                myresult = mycursor.stored_results()
+                self.tableWidget.setRowCount(0)
 
-            mycursor.callproc("TimKiemNhanVien", [ma_nv, ten_nhan_vien, dia_chi, cap_bac, sdt, ])
+                for m in myresult:
+                    for x in m.fetchall():
+                        rowPosition = self.tableWidget.rowCount()
+                        self.tableWidget.insertRow(rowPosition)
 
-            myresult = mycursor.stored_results()
+                        self.tableWidget.setItem(rowPosition, 0, QtWidgets.QTableWidgetItem(str(x[0])))
+                        self.tableWidget.setItem(rowPosition, 1, QtWidgets.QTableWidgetItem(str(x[1])))
+                        self.tableWidget.setItem(rowPosition, 2, QtWidgets.QTableWidgetItem(str(x[2])))
+                        self.tableWidget.setItem(rowPosition, 3, QtWidgets.QTableWidgetItem(str(x[5])))
+                        self.tableWidget.setItem(rowPosition, 4, QtWidgets.QTableWidgetItem(str(x[3])))
 
-            self.tableWidget.setRowCount(0)
-
-            for m in myresult:
-                for x in m.fetchall():
-                    rowPosition = self.tableWidget.rowCount()
-                    self.tableWidget.insertRow(rowPosition)
-
-                    self.tableWidget.setItem(rowPosition, 0, QtWidgets.QTableWidgetItem(str(x[0])))
-                    self.tableWidget.setItem(rowPosition, 1, QtWidgets.QTableWidgetItem(str(x[1])))
-                    self.tableWidget.setItem(rowPosition, 2, QtWidgets.QTableWidgetItem(str(x[2])))
-                    self.tableWidget.setItem(rowPosition, 3, QtWidgets.QTableWidgetItem(str(x[5])))
-                    self.tableWidget.setItem(rowPosition, 4, QtWidgets.QTableWidgetItem(str(x[3])))
-
-                    self.tableWidget.item(rowPosition, 0).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
-                    self.tableWidget.item(rowPosition, 1).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
-                    self.tableWidget.item(rowPosition, 2).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
-                    self.tableWidget.item(rowPosition, 3).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
-                    self.tableWidget.item(rowPosition, 4).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        self.tableWidget.item(rowPosition, 0).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        self.tableWidget.item(rowPosition, 1).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        self.tableWidget.item(rowPosition, 2).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        self.tableWidget.item(rowPosition, 3).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        self.tableWidget.item(rowPosition, 4).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                
+                close_db_connection(mycursor)
+                
         except Error as e:
             msg = QtWidgets.QMessageBox()
             msg.setWindowTitle("Lỗi")
