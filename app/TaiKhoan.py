@@ -1,12 +1,12 @@
 from PyQt5 import QtWidgets, uic, QtGui, QtCore
 from mysql.connector import Error
-from SqlHelper import close_db_connection, create_db_connection
+from data.SqlHelper import close_db_connection, create_db_connection
 
 class ThemTaiKhoan(QtWidgets.QDialog):
     def __init__(self):   
         self.db_connection = create_db_connection()     
         super(ThemTaiKhoan, self).__init__()
-        uic.loadUi('UI/ThemTaiKhoan.ui', self)
+        uic.loadUi('ui/ThemTaiKhoan.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
 
@@ -20,6 +20,7 @@ class ThemTaiKhoan(QtWidgets.QDialog):
 
             res = mycursor.callproc("TaoMaTK", [0, ])
             self.textEdit.setPlainText(str(res[0]))
+            self.textEdit.setDisabled(True)
             close_db_connection(mycursor)  
 
         self.textEdit_3.setDisabled(False)
@@ -147,7 +148,7 @@ class TimKiemTaiKhoan(QtWidgets.QDialog):
     def __init__(self):
         self.db_connection = create_db_connection()     
         super(TimKiemTaiKhoan, self).__init__()
-        uic.loadUi('UI/TimKiemTaiKhoan.ui', self)
+        uic.loadUi('ui/TimKiemTaiKhoan.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
 

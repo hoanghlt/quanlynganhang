@@ -1,7 +1,9 @@
 import mysql.connector
 from PyQt5 import QtWidgets, uic, QtGui, QtCore
+from PyQt5.QtWidgets import QHeaderView
 from mysql.connector import Error
-from SqlHelper import close_db_connection, create_db_connection
+from data.SqlHelper import close_db_connection, create_db_connection
+from common import common
 
 # Sử dụng trong ứng dụng:
 # some_object = SomeClass()
@@ -12,7 +14,7 @@ class ThemGiaoDich(QtWidgets.QDialog):
     def __init__(self):
         self.db_connection = create_db_connection()
         super(ThemGiaoDich, self).__init__()
-        uic.loadUi('UI/ThemGiaoDich.ui', self)
+        uic.loadUi('ui/ThemGiaoDich.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
 
@@ -30,7 +32,8 @@ class ThemGiaoDich(QtWidgets.QDialog):
                 res = mycursor.callproc("TaoMaGDCN", [0, ])
             else:
                 res = mycursor.callproc("TaoMaGDTCDN", [0, ])
-            self.textEdit.setPlainText(str(res[0]))            
+            self.textEdit.setPlainText(str(res[0]))        
+            self.textEdit.setDisabled(True)    
             close_db_connection(mycursor)        
 
         self.show()
@@ -108,7 +111,7 @@ class TimKiemGiaoDich(QtWidgets.QDialog):
     def __init__(self):
         self.db_connection = create_db_connection()
         super(TimKiemGiaoDich, self).__init__()
-        uic.loadUi('UI/TimKiemGiaoDich.ui', self)
+        uic.loadUi('ui/TimKiemGiaoDich.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
 
@@ -181,6 +184,9 @@ class TimKiemGiaoDich(QtWidgets.QDialog):
                             QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
                     
                 close_db_connection(mycursor)
+                
+            common.autosizeColumns(self.tableWidget)
+            self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         except Error as e:
             msg = QtWidgets.QMessageBox()

@@ -1,14 +1,29 @@
 from PyQt5 import QtWidgets, uic, QtGui, QtCore
+from PyQt5.QtWidgets import QHeaderView
 from mysql.connector import Error
-from SqlHelper import create_db_connection, close_db_connection
+from data.SqlHelper import create_db_connection, close_db_connection
+from common import common
 
 class LietKeTinDung(QtWidgets.QDialog):
     def __init__(self):
         self.db_connection = create_db_connection()     
         super(LietKeTinDung, self).__init__()
-        uic.loadUi('UI/LietKeTinDung.ui', self)
+        uic.loadUi('ui/LietKeTinDung.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
+        
+        # Tạo QDateEdit và đặt ngày mặc định
+        self.dateEdit.setDateRange(QtCore.QDate(1900, 1, 1), QtCore.QDate(2100, 12, 31))  # Đặt khoảng ngày cho QDateEdit
+        self.dateEdit.setDate(QtCore.QDate.currentDate())  # Đặt ngày mặc định là ngày hiện tại
+        self.dateEdit.setCalendarPopup(True)
+        # Định dạng ngày hiển thị thành dd/MM/yyyy
+        self.dateEdit.setDisplayFormat("dd/MM/yyyy")
+        
+        self.dateEdit_2.setDateRange(QtCore.QDate(1900, 1, 1), QtCore.QDate(2100, 12, 31))  # Đặt khoảng ngày cho QDateEdit
+        self.dateEdit_2.setDate(QtCore.QDate.currentDate())  # Đặt ngày mặc định là ngày hiện tại
+        self.dateEdit_2.setCalendarPopup(True)
+        # Định dạng ngày hiển thị thành dd/MM/yyyy
+        self.dateEdit_2.setDisplayFormat("dd/MM/yyyy")
 
         self.pushButton.clicked.connect(self.on_click_process_button)
 
@@ -43,11 +58,14 @@ class LietKeTinDung(QtWidgets.QDialog):
                             rowPosition, 1, QtWidgets.QTableWidgetItem(str(x[1])))
 
                         self.tableWidget.item(rowPosition, 0).setTextAlignment(
-                            QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                            QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
                         self.tableWidget.item(rowPosition, 1).setTextAlignment(
                             QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
                         
                 close_db_connection(mycursor)
+            
+            common.autosizeColumns(self.tableWidget)
+            self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
                 
         except Error as e:
             msg = QtWidgets.QMessageBox()
@@ -60,7 +78,7 @@ class LietKeNoTinDung(QtWidgets.QDialog):
     def __init__(self):
         self.db_connection = create_db_connection()     
         super(LietKeNoTinDung, self).__init__()
-        uic.loadUi('UI/LietKeNoTinDung.ui', self)
+        uic.loadUi('ui/LietKeNoTinDung.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
 
@@ -85,11 +103,14 @@ class LietKeNoTinDung(QtWidgets.QDialog):
                             rowPosition, 1, QtWidgets.QTableWidgetItem(str(x[1])))
 
                         self.tableWidget.item(rowPosition, 0).setTextAlignment(
-                            QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                            QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
                         self.tableWidget.item(rowPosition, 1).setTextAlignment(
                             QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
                 
                 close_db_connection(mycursor)
+            
+            common.autosizeColumns(self.tableWidget)
+            self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         except Error as e:
             msg = QtWidgets.QMessageBox()
@@ -104,7 +125,7 @@ class LietKeTongTienGui(QtWidgets.QDialog):
     def __init__(self):
         self.db_connection = create_db_connection()     
         super(LietKeTongTienGui, self).__init__()
-        uic.loadUi('UI/LietKeTongTienGui.ui', self)
+        uic.loadUi('ui/LietKeTongTienGui.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
 
@@ -140,15 +161,18 @@ class LietKeTongTienGui(QtWidgets.QDialog):
                         self.tableWidget.item(rowPosition, 0).setTextAlignment(
                             QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
                         self.tableWidget.item(rowPosition, 1).setTextAlignment(
-                            QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                            QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
                         self.tableWidget.item(rowPosition, 2).setTextAlignment(
-                            QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                            QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
                         self.tableWidget.item(rowPosition, 3).setTextAlignment(
-                            QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                            QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
                         self.tableWidget.item(rowPosition, 4).setTextAlignment(
                             QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
 
                     close_db_connection(mycursor)
+                    
+                common.autosizeColumns(self.tableWidget)
+                self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         except Error as e:
             msg = QtWidgets.QMessageBox()

@@ -4,21 +4,23 @@ from PyQt5.QtWidgets import QVBoxLayout, QWidget, QLabel, QScrollArea
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 
-import GiaoDich
-import KhachHang
-import NhanVien
-import TaiKhoan
-import TruyVan
+import app.GiaoDich as GiaoDich
+import app.KhachHang as KhachHang
+import app.NhanVien as NhanVien
+import app.TaiKhoan as TaiKhoan
+import app.BaoCao as BaoCao
 
 
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui, self).__init__()
 
+        # Load giao diện từ file .ui
         uic.loadUi('UI/MainMenu.ui', self)
-        # self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
+        # Đặt biểu tượng cho cửa sổ
         self.setWindowIcon(QtGui.QIcon('assets/icon/icon.png'))
 
+        # Thiết lập biểu tượng cho các action
         self.action_add_staff.setIcon(QtGui.QIcon('assets/icon/staff.png'))
         self.action_search_staff.setIcon(
             QtGui.QIcon('assets/icon/searchstaff.png'))
@@ -37,6 +39,7 @@ class Ui(QtWidgets.QMainWindow):
         self.action_report_total.setIcon(QtGui.QIcon('assets/icon/result.png'))
         self.action_report_td.setIcon(QtGui.QIcon('assets/icon/report2.png'))
 
+        # Kết nối các action với hàm mở cửa sổ tương ứng
         self.action_add_staff.triggered.connect(self.open_add_staff)
         self.action_search_staff.triggered.connect(self.open_search_staff)
         self.action_payroll.triggered.connect(self.open_payroll)
@@ -68,6 +71,7 @@ class Ui(QtWidgets.QMainWindow):
         pixmap = QPixmap('assets/icon/hinhnen.jpg')
         label.setPixmap(pixmap)
         label.setAlignment(Qt.AlignCenter)
+        
         # Làm cho hình ảnh tự điều chỉnh để lấp đầy QLabel
         label.setScaledContents(True)
 
@@ -84,6 +88,7 @@ class Ui(QtWidgets.QMainWindow):
 
         self.show()
 
+    # Các hàm mở cửa sổ tương ứng
     def show_child(self, child_window, title):
         self.QS_Body = QScrollArea(self)
         self.QS_Body.setWidgetResizable(True)
@@ -107,7 +112,7 @@ class Ui(QtWidgets.QMainWindow):
         self.show_child(child_window, title)
 
     def open_payroll(self):
-        child_window = TruyVan.TinhLuong()
+        child_window = BaoCao.TinhLuong()
         title = "Tính lương nhân viên"
         self.show_child(child_window, title)
 
@@ -137,17 +142,17 @@ class Ui(QtWidgets.QMainWindow):
         self.show_child(child_window, title)
 
     def open_report_ntd(self):
-        child_window = TruyVan.LietKeNoTinDung()
+        child_window = BaoCao.LietKeNoTinDung()
         title = "Nợ tín dụng"
         self.show_child(child_window, title)
 
     def open_report_td(self):
-        child_window = TruyVan.LietKeTinDung()
+        child_window = BaoCao.LietKeTinDung()
         title = "Tín dụng"
         self.show_child(child_window, title)
 
     def open_report_total(self):
-        child_window = TruyVan.LietKeTongTienGui()
+        child_window = BaoCao.LietKeTongTienGui()
         title = "Tổng tiền gửi"
         self.show_child(child_window, title)
 

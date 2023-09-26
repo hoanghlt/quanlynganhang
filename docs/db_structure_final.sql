@@ -52,7 +52,7 @@ CREATE TABLE `giaodichcanhan` (
 
 LOCK TABLES `giaodichcanhan` WRITE;
 /*!40000 ALTER TABLE `giaodichcanhan` DISABLE KEYS */;
-INSERT INTO `giaodichcanhan` VALUES (52,423,'chi tieu TKTD',NULL,'2022-08-15 10:17:16',1,1,NULL,1),(53,234,'chi tieu TKTD',NULL,'2022-08-15 10:17:16',2,2,NULL,2),(54,424,'chi tieu TKTD',NULL,'2022-08-15 10:17:16',3,3,NULL,2),(55,245,'chi tieu TKTD',NULL,'2022-08-15 10:17:16',4,4,NULL,2),(56,765,'chi tieu TKTD',NULL,'2022-08-15 10:17:16',5,5,NULL,1),(57,563,'chi tieu TKTD',NULL,'2022-08-15 10:17:16',6,6,NULL,1),(58,636,'chi tieu TKTD',NULL,'2022-08-15 10:17:16',7,7,NULL,2),(59,452,'chi tieu TKTD',NULL,'2022-08-15 10:17:16',8,8,NULL,1),(60,350,'chi tieu TKTD',NULL,'2022-08-15 10:17:16',9,9,NULL,2),(61,653,'chi tieu TKTD',NULL,'2022-08-15 10:17:16',10,10,NULL,2),(67,341,'thanh toan TKTD','TKGT','2022-08-15 10:19:50',1,1,14,1),(68,341,'thanh toan TKTD','TKGT','2022-08-15 10:19:50',2,2,15,1),(69,34,'thanh toan TKTD','TKGT','2022-08-15 10:19:50',3,3,16,1),(70,23,'thanh toan TKTD','tien mat','2022-08-15 10:19:50',4,4,NULL,1),(71,45,'thanh toan TKTD','tien mat','2022-08-15 10:19:50',5,5,NULL,2),(72,54,'thanh toan TKTD','tien mat','2022-08-15 10:19:50',6,6,NULL,2),(73,345,'thanh toan TKTD','TKGT','2022-08-15 10:19:50',7,7,20,1),(74,35,'thanh toan TKTD','tien mat','2022-08-15 10:19:50',8,8,NULL,2),(75,62,'thanh toan TKTD','tien mat','2022-08-15 10:19:50',9,9,NULL,2),(76,352,'thanh toan TKTD','tien mat','2022-08-15 10:19:50',10,10,NULL,1),(82,123,'nap tien TKGT','tien mat','2022-08-15 10:28:40',1,NULL,14,1),(83,343,'chi tieu TKGT',NULL,'2022-08-15 10:28:40',2,NULL,15,2);
+INSERT INTO `giaodichcanhan` VALUES (52,423000,'chi tieu TKTD',NULL,'2023-08-15 10:17:16',1,1,NULL,1),(53,234000,'chi tieu TKTD',NULL,'2023-08-15 10:17:16',2,2,NULL,2),(54,424000,'chi tieu TKTD',NULL,'2023-08-15 10:17:16',3,3,NULL,2),(55,245000,'chi tieu TKTD',NULL,'2023-08-15 10:17:16',4,4,NULL,2),(56,765000,'chi tieu TKTD',NULL,'2023-08-15 10:17:16',5,5,NULL,1),(57,563000,'chi tieu TKTD',NULL,'2023-08-15 10:17:16',6,6,NULL,1),(58,636000,'chi tieu TKTD',NULL,'2023-08-15 10:17:16',7,7,NULL,2),(59,452000,'chi tieu TKTD',NULL,'2023-08-15 10:17:16',8,8,NULL,1),(60,350000,'chi tieu TKTD',NULL,'2023-08-15 10:17:16',9,9,NULL,2),(61,653000,'chi tieu TKTD',NULL,'2023-08-15 10:17:16',10,10,NULL,2),(67,341000,'thanh toan TKTD','TKGT','2023-08-15 10:19:50',1,1,14,1),(68,341000,'thanh toan TKTD','TKGT','2023-08-15 10:19:50',2,2,15,1),(69,34000000,'thanh toan TKTD','TKGT','2023-08-15 10:19:50',3,3,16,1),(70,23000000,'thanh toan TKTD','tien mat','2023-08-15 10:19:50',4,4,NULL,1),(71,45000000,'thanh toan TKTD','tien mat','2023-08-15 10:19:50',5,5,NULL,2),(72,54000000,'thanh toan TKTD','tien mat','2023-08-15 10:19:50',6,6,NULL,2),(73,34500000,'thanh toan TKTD','TKGT','2023-08-15 10:19:50',7,7,20,1),(74,3500000,'thanh toan TKTD','tien mat','2023-08-15 10:19:50',8,8,NULL,2),(75,6200000,'thanh toan TKTD','tien mat','2023-08-15 10:19:50',9,9,NULL,2),(76,352000,'thanh toan TKTD','tien mat','2023-08-15 10:19:50',10,10,NULL,1),(82,1230000,'nap tien TKGT','tien mat','2023-08-15 10:28:40',1,NULL,14,1),(83,343000,'chi tieu TKGT',NULL,'2023-08-15 10:28:40',2,NULL,15,2);
 /*!40000 ALTER TABLE `giaodichcanhan` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -228,7 +228,7 @@ CREATE TABLE `giaodichcanhan_log` (
 
 LOCK TABLES `giaodichcanhan_log` WRITE;
 /*!40000 ALTER TABLE `giaodichcanhan_log` DISABLE KEYS */;
-INSERT INTO `giaodichcanhan_log` VALUES (52,'2022-08-15 10:17:16','Insert',52,423,'chi tiêu TKTD',NULL,'2022-08-15 10:17:16',1,1,NULL,1),(53,'2022-08-15 10:17:16','Insert',53,234,'chi tiêu TKTD',NULL,'2022-08-15 10:17:16',2,2,NULL,2),(54,'2022-08-15 10:17:16','Insert',54,424,'chi tiêu TKTD',NULL,'2022-08-15 10:17:16',3,3,NULL,2),(55,'2022-08-15 10:17:16','Insert',55,245,'chi tiêu TKTD',NULL,'2022-08-15 10:17:16',4,4,NULL,2),(56,'2022-08-15 10:17:16','Insert',56,765,'chi tiêu TKTD',NULL,'2022-08-15 10:17:16',5,5,NULL,1),(57,'2022-08-15 10:17:16','Insert',57,563,'chi tiêu TKTD',NULL,'2022-08-15 10:17:16',6,6,NULL,1),(58,'2022-08-15 10:17:16','Insert',58,636,'chi tiêu TKTD',NULL,'2022-08-15 10:17:16',7,7,NULL,2),(59,'2022-08-15 10:17:16','Insert',59,452,'chi tiêu TKTD',NULL,'2022-08-15 10:17:16',8,8,NULL,1),(60,'2022-08-15 10:17:16','Insert',60,350,'chi tiêu TKTD',NULL,'2022-08-15 10:17:16',9,9,NULL,2),(61,'2022-08-15 10:17:16','Insert',61,653,'chi tiêu TKTD',NULL,'2022-08-15 10:17:16',10,10,NULL,2),(67,'2022-08-15 10:19:50','Insert',67,341,NULL,NULL,'2022-08-15 10:19:50',1,NULL,14,1),(68,'2022-08-15 10:19:50','Insert',68,341,NULL,NULL,'2022-08-15 10:19:50',2,NULL,15,1),(69,'2022-08-15 10:19:50','Insert',69,34,NULL,NULL,'2022-08-15 10:19:50',3,NULL,16,1),(70,'2022-08-15 10:19:50','Insert',70,23,NULL,NULL,'2022-08-15 10:19:50',4,NULL,17,1),(71,'2022-08-15 10:19:50','Insert',71,45,NULL,NULL,'2022-08-15 10:19:50',5,NULL,18,2),(72,'2022-08-15 10:19:50','Insert',72,54,NULL,NULL,'2022-08-15 10:19:50',6,NULL,19,2),(73,'2022-08-15 10:19:50','Insert',73,345,NULL,NULL,'2022-08-15 10:19:50',7,NULL,20,1),(74,'2022-08-15 10:19:50','Insert',74,35,NULL,NULL,'2022-08-15 10:19:50',8,NULL,21,2),(75,'2022-08-15 10:19:50','Insert',75,62,NULL,NULL,'2022-08-15 10:19:50',9,NULL,22,2),(76,'2022-08-15 10:19:50','Insert',76,352,NULL,NULL,'2022-08-15 10:19:50',10,NULL,23,1),(82,'2022-08-15 10:28:40','Insert',82,123,'nap tien TKGT','tien mat','2022-08-15 10:28:40',1,NULL,14,1),(83,'2022-08-15 10:28:40','Insert',83,343,'chi tieu TKGT',NULL,'2022-08-15 10:28:40',2,NULL,15,2);
+INSERT INTO `giaodichcanhan_log` VALUES (52,'2023-08-15 10:17:16','Insert',52,423000,'chi tiêu TKTD',NULL,'2023-08-15 10:17:16',1,1,NULL,1),(53,'2023-08-15 10:17:16','Insert',53,234000,'chi tiêu TKTD',NULL,'2023-08-15 10:17:16',2,2,NULL,2),(54,'2023-08-15 10:17:16','Insert',54,424000,'chi tiêu TKTD',NULL,'2023-08-15 10:17:16',3,3,NULL,2),(55,'2023-08-15 10:17:16','Insert',55,245000,'chi tiêu TKTD',NULL,'2023-08-15 10:17:16',4,4,NULL,2),(56,'2023-08-15 10:17:16','Insert',56,765000,'chi tiêu TKTD',NULL,'2023-08-15 10:17:16',5,5,NULL,1),(57,'2023-08-15 10:17:16','Insert',57,563000,'chi tiêu TKTD',NULL,'2023-08-15 10:17:16',6,6,NULL,1),(58,'2023-08-15 10:17:16','Insert',58,636000,'chi tiêu TKTD',NULL,'2023-08-15 10:17:16',7,7,NULL,2),(59,'2023-08-15 10:17:16','Insert',59,452000,'chi tiêu TKTD',NULL,'2023-08-15 10:17:16',8,8,NULL,1),(60,'2023-08-15 10:17:16','Insert',60,350000,'chi tiêu TKTD',NULL,'2023-08-15 10:17:16',9,9,NULL,2),(61,'2023-08-15 10:17:16','Insert',61,653000,'chi tiêu TKTD',NULL,'2023-08-15 10:17:16',10,10,NULL,2),(67,'2023-08-15 10:19:50','Insert',67,341000,NULL,NULL,'2023-08-15 10:19:50',1,NULL,14,1),(68,'2023-08-15 10:19:50','Insert',68,341000,NULL,NULL,'2023-08-15 10:19:50',2,NULL,15,1),(69,'2023-08-15 10:19:50','Insert',69,34000000,NULL,NULL,'2023-08-15 10:19:50',3,NULL,16,1),(70,'2023-08-15 10:19:50','Insert',70,2300000,NULL,NULL,'2023-08-15 10:19:50',4,NULL,17,1),(71,'2023-08-15 10:19:50','Insert',71,45000000,NULL,NULL,'2023-08-15 10:19:50',5,NULL,18,2),(72,'2023-08-15 10:19:50','Insert',72,5400000,NULL,NULL,'2023-08-15 10:19:50',6,NULL,19,2),(73,'2023-08-15 10:19:50','Insert',73,345000,NULL,NULL,'2023-08-15 10:19:50',7,NULL,20,1),(74,'2023-08-15 10:19:50','Insert',74,3500000,NULL,NULL,'2023-08-15 10:19:50',8,NULL,21,2),(75,'2023-08-15 10:19:50','Insert',75,6200000,NULL,NULL,'2023-08-15 10:19:50',9,NULL,22,2),(76,'2023-08-15 10:19:50','Insert',76,352000,NULL,NULL,'2023-08-15 10:19:50',10,NULL,23,1),(82,'2023-08-15 10:28:40','Insert',82,1230000,'nap tien TKGT','tien mat','2023-08-15 10:28:40',1,NULL,14,1),(83,'2023-08-15 10:28:40','Insert',83,343000,'chi tieu TKGT',NULL,'2023-08-15 10:28:40',2,NULL,15,2);
 /*!40000 ALTER TABLE `giaodichcanhan_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,7 +267,7 @@ CREATE TABLE `giaodichtochucdoanhnghiep` (
 
 LOCK TABLES `giaodichtochucdoanhnghiep` WRITE;
 /*!40000 ALTER TABLE `giaodichtochucdoanhnghiep` DISABLE KEYS */;
-INSERT INTO `giaodichtochucdoanhnghiep` VALUES (25,152,'chi tieu TKGT',NULL,'2022-08-15 10:34:24',11,24,NULL,1),(26,300,'vay tien TKVT','tien mat','2022-08-15 10:34:24',11,NULL,11,2),(27,12,'vay tien TKVT','TKGT','2022-08-15 10:34:24',12,25,12,2),(28,20,'tra no TKVT','tien mat','2022-08-15 10:34:24',13,NULL,13,1),(29,30,'tra no TKVT','TKGT','2022-08-15 10:34:24',11,26,11,2);
+INSERT INTO `giaodichtochucdoanhnghiep` VALUES (25,152,'chi tieu TKGT',NULL,'2023-08-15 10:34:24',11,24,NULL,1),(26,300,'vay tien TKVT','tien mat','2023-08-15 10:34:24',11,NULL,11,2),(27,12,'vay tien TKVT','TKGT','2023-08-15 10:34:24',12,25,12,2),(28,20,'tra no TKVT','tien mat','2023-08-15 10:34:24',13,NULL,13,1),(29,30,'tra no TKVT','TKGT','2023-08-15 10:34:24',11,26,11,2);
 /*!40000 ALTER TABLE `giaodichtochucdoanhnghiep` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -449,7 +449,7 @@ CREATE TABLE `giaodichtochucdoanhnghiep_log` (
 
 LOCK TABLES `giaodichtochucdoanhnghiep_log` WRITE;
 /*!40000 ALTER TABLE `giaodichtochucdoanhnghiep_log` DISABLE KEYS */;
-INSERT INTO `giaodichtochucdoanhnghiep_log` VALUES (3,'2022-08-15 10:34:24','Insert',25,152,'chi tieu TKGT',NULL,'2022-08-15 10:34:24',11,NULL,24,1),(4,'2022-08-15 10:34:24','Insert',26,300,'vay tien TKVT','tien mat','2022-08-15 10:34:24',11,11,NULL,2),(5,'2022-08-15 10:34:24','Insert',27,12,'vay tien TKVT','TKGT','2022-08-15 10:34:24',12,12,25,2),(6,'2022-08-15 10:34:24','Insert',28,20,'tra no TKVT','tien mat','2022-08-15 10:34:24',13,13,NULL,1),(7,'2022-08-15 10:34:24','Insert',29,30,'tra no TKVT','TKGT','2022-08-15 10:34:24',11,11,26,2);
+INSERT INTO `giaodichtochucdoanhnghiep_log` VALUES (3,'2023-08-15 10:34:24','Insert',25,152,'chi tieu TKGT',NULL,'2023-08-15 10:34:24',11,NULL,24,1),(4,'2023-08-15 10:34:24','Insert',26,300,'vay tien TKVT','tien mat','2023-08-15 10:34:24',11,11,NULL,2),(5,'2023-08-15 10:34:24','Insert',27,12,'vay tien TKVT','TKGT','2023-08-15 10:34:24',12,12,25,2),(6,'2023-08-15 10:34:24','Insert',28,20,'tra no TKVT','tien mat','2023-08-15 10:34:24',13,13,NULL,1),(7,'2023-08-15 10:34:24','Insert',29,30,'tra no TKVT','TKGT','2023-08-15 10:34:24',11,11,26,2);
 /*!40000 ALTER TABLE `giaodichtochucdoanhnghiep_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -647,7 +647,7 @@ CREATE TABLE `khachhang_log` (
 
 LOCK TABLES `khachhang_log` WRITE;
 /*!40000 ALTER TABLE `khachhang_log` DISABLE KEYS */;
-INSERT INTO `khachhang_log` VALUES (5,'2022-08-15 09:45:42','Insert',1,NULL,'Nguyễn Văn A',NULL,'Hà Nội'),(6,'2022-08-15 09:45:42','Insert',2,NULL,'Trần Văn B',NULL,'Hà Nam'),(7,'2022-08-15 09:45:42','Insert',3,NULL,'Vũ Thị C',NULL,'Thái Nguyên'),(8,'2022-08-15 09:45:42','Insert',4,NULL,'Tạ Văn D',NULL,'Hà Nội'),(9,'2022-08-15 09:45:42','Insert',5,NULL,'Phạm Văn E',NULL,'Thanh Hoá'),(10,'2022-08-15 09:45:42','Insert',6,NULL,'Ngô Tiến F',NULL,'Hà Nội'),(11,'2022-08-15 09:45:42','Insert',7,NULL,'Lê Đình G',NULL,'Hà Đông'),(12,'2022-08-15 09:45:42','Insert',8,NULL,'Nguyễn Đăng H',NULL,'Hà Nội'),(13,'2022-08-15 09:45:42','Insert',9,NULL,'Lê Văn I',NULL,'Hà Nội'),(14,'2022-08-15 09:45:42','Insert',10,NULL,'Phạm Thị J',NULL,'Hà Nam'),(15,'2022-08-15 09:45:42','Insert',11,NULL,'Nguyễn Văn K',NULL,'Thanh Hoá'),(16,'2022-08-15 09:45:42','Insert',12,NULL,'Kiều Văn L',NULL,'Thái Nguyên'),(17,'2022-08-15 09:45:42','Insert',13,NULL,'Bùi Thị M',NULL,'Nghệ An');
+INSERT INTO `khachhang_log` VALUES (5,'2023-08-15 09:45:42','Insert',1,NULL,'Nguyễn Văn A',NULL,'Hà Nội'),(6,'2023-08-15 09:45:42','Insert',2,NULL,'Trần Văn B',NULL,'Hà Nam'),(7,'2023-08-15 09:45:42','Insert',3,NULL,'Vũ Thị C',NULL,'Thái Nguyên'),(8,'2023-08-15 09:45:42','Insert',4,NULL,'Tạ Văn D',NULL,'Hà Nội'),(9,'2023-08-15 09:45:42','Insert',5,NULL,'Phạm Văn E',NULL,'Thanh Hoá'),(10,'2023-08-15 09:45:42','Insert',6,NULL,'Ngô Tiến F',NULL,'Hà Nội'),(11,'2023-08-15 09:45:42','Insert',7,NULL,'Lê Đình G',NULL,'Hà Đông'),(12,'2023-08-15 09:45:42','Insert',8,NULL,'Nguyễn Đăng H',NULL,'Hà Nội'),(13,'2023-08-15 09:45:42','Insert',9,NULL,'Lê Văn I',NULL,'Hà Nội'),(14,'2023-08-15 09:45:42','Insert',10,NULL,'Phạm Thị J',NULL,'Hà Nam'),(15,'2023-08-15 09:45:42','Insert',11,NULL,'Nguyễn Văn K',NULL,'Thanh Hoá'),(16,'2023-08-15 09:45:42','Insert',12,NULL,'Kiều Văn L',NULL,'Thái Nguyên'),(17,'2023-08-15 09:45:42','Insert',13,NULL,'Bùi Thị M',NULL,'Nghệ An');
 /*!40000 ALTER TABLE `khachhang_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -846,7 +846,7 @@ CREATE TABLE `khachhang_sdt_log` (
 
 LOCK TABLES `khachhang_sdt_log` WRITE;
 /*!40000 ALTER TABLE `khachhang_sdt_log` DISABLE KEYS */;
-INSERT INTO `khachhang_sdt_log` VALUES (27,'2022-08-15 09:47:41','Insert',1,NULL,'0945881905'),(28,'2022-08-15 09:47:41','Insert',2,NULL,'0374799681'),(29,'2022-08-15 09:47:41','Insert',3,NULL,'0365722364'),(30,'2022-08-15 09:47:41','Insert',4,NULL,'0944287082'),(31,'2022-08-15 09:47:41','Insert',5,NULL,'0974131489'),(32,'2022-08-15 09:47:41','Insert',6,NULL,'0986958908'),(33,'2022-08-15 09:47:41','Insert',7,NULL,'0904054732'),(34,'2022-08-15 09:47:41','Insert',8,NULL,'0988753023'),(35,'2022-08-15 09:47:41','Insert',9,NULL,'0914421796'),(36,'2022-08-15 09:47:41','Insert',10,NULL,'0976054844'),(37,'2022-08-15 09:47:41','Insert',11,NULL,'0964384506'),(38,'2022-08-15 09:47:41','Insert',12,NULL,'0979006323'),(39,'2022-08-15 09:47:41','Insert',13,NULL,'0989352144');
+INSERT INTO `khachhang_sdt_log` VALUES (27,'2023-08-15 09:47:41','Insert',1,NULL,'0945881905'),(28,'2023-08-15 09:47:41','Insert',2,NULL,'0374799681'),(29,'2023-08-15 09:47:41','Insert',3,NULL,'0365722364'),(30,'2023-08-15 09:47:41','Insert',4,NULL,'0944287082'),(31,'2023-08-15 09:47:41','Insert',5,NULL,'0974131489'),(32,'2023-08-15 09:47:41','Insert',6,NULL,'0986958908'),(33,'2023-08-15 09:47:41','Insert',7,NULL,'0904054732'),(34,'2023-08-15 09:47:41','Insert',8,NULL,'0988753023'),(35,'2023-08-15 09:47:41','Insert',9,NULL,'0914421796'),(36,'2023-08-15 09:47:41','Insert',10,NULL,'0976054844'),(37,'2023-08-15 09:47:41','Insert',11,NULL,'0964384506'),(38,'2023-08-15 09:47:41','Insert',12,NULL,'0979006323'),(39,'2023-08-15 09:47:41','Insert',13,NULL,'0989352144');
 /*!40000 ALTER TABLE `khachhang_sdt_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -872,7 +872,7 @@ CREATE TABLE `khachhangcanhan` (
 
 LOCK TABLES `khachhangcanhan` WRITE;
 /*!40000 ALTER TABLE `khachhangcanhan` DISABLE KEYS */;
-INSERT INTO `khachhangcanhan` VALUES (1,'Lập trình viên','1000'),(2,'Kế toán','2000'),(3,'Làm ruộng','200'),(4,'Xe ôm','700'),(5,'Thiết kế','4000'),(6,'Kỹ sư','600'),(7,'Xây dựng','700'),(8,'Doanh nhân','400'),(9,'Công an','300'),(10,'Bác sỹ','1500');
+INSERT INTO `khachhangcanhan` VALUES (1,'Lập trình viên','25000000'),(2,'Kế toán','20000000'),(3,'Làm ruộng','10000000'),(4,'Xe ôm','11000000'),(5,'Thiết kế','60000000'),(6,'Kỹ sư','30000000'),(7,'Xây dựng','30000000'),(8,'Doanh nhân','670000000'),(9,'Công an','15000000'),(10,'Bác sỹ','45000000');
 /*!40000 ALTER TABLE `khachhangcanhan` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -1035,7 +1035,7 @@ CREATE TABLE `khachhangcanhan_log` (
 
 LOCK TABLES `khachhangcanhan_log` WRITE;
 /*!40000 ALTER TABLE `khachhangcanhan_log` DISABLE KEYS */;
-INSERT INTO `khachhangcanhan_log` VALUES (6,'2022-08-15 09:51:36','Insert',1,NULL,'Lập trình viên',NULL,'1000'),(7,'2022-08-15 09:51:36','Insert',2,NULL,'Kế toán',NULL,'2000'),(8,'2022-08-15 09:51:36','Insert',3,NULL,'Làm ruộng',NULL,'200'),(9,'2022-08-15 09:51:36','Insert',4,NULL,'Xe ôm',NULL,'700'),(10,'2022-08-15 09:51:36','Insert',5,NULL,'Thiết kế',NULL,'4000'),(11,'2022-08-15 09:51:36','Insert',6,NULL,'Kỹ sư',NULL,'600'),(12,'2022-08-15 09:51:36','Insert',7,NULL,'Xây dựng',NULL,'700'),(13,'2022-08-15 09:51:36','Insert',8,NULL,'Doanh nhân',NULL,'400'),(14,'2022-08-15 09:51:36','Insert',9,NULL,'Công an',NULL,'300'),(15,'2022-08-15 09:51:36','Insert',10,NULL,'Bác sỹ',NULL,'1500');
+INSERT INTO `khachhangcanhan_log` VALUES (6,'2023-08-15 09:51:36','Insert',1,NULL,'Lập trình viên',NULL,'1000'),(7,'2023-08-15 09:51:36','Insert',2,NULL,'Kế toán',NULL,'2000'),(8,'2023-08-15 09:51:36','Insert',3,NULL,'Làm ruộng',NULL,'200'),(9,'2023-08-15 09:51:36','Insert',4,NULL,'Xe ôm',NULL,'700'),(10,'2023-08-15 09:51:36','Insert',5,NULL,'Thiết kế',NULL,'4000'),(11,'2023-08-15 09:51:36','Insert',6,NULL,'Kỹ sư',NULL,'600'),(12,'2023-08-15 09:51:36','Insert',7,NULL,'Xây dựng',NULL,'700'),(13,'2023-08-15 09:51:36','Insert',8,NULL,'Doanh nhân',NULL,'400'),(14,'2023-08-15 09:51:36','Insert',9,NULL,'Công an',NULL,'300'),(15,'2023-08-15 09:51:36','Insert',10,NULL,'Bác sỹ',NULL,'1500');
 /*!40000 ALTER TABLE `khachhangcanhan_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1224,7 +1224,7 @@ CREATE TABLE `khachhangtochucdoanhnghiep_log` (
 
 LOCK TABLES `khachhangtochucdoanhnghiep_log` WRITE;
 /*!40000 ALTER TABLE `khachhangtochucdoanhnghiep_log` DISABLE KEYS */;
-INSERT INTO `khachhangtochucdoanhnghiep_log` VALUES (1,'2022-08-15 09:50:03','Insert',11,NULL,'Vũ Văn A',NULL,'100'),(2,'2022-08-15 09:50:03','Insert',12,NULL,'Hà Thị B',NULL,'10'),(3,'2022-08-15 09:50:03','Insert',13,NULL,'Đỗ Tiến C',NULL,'50');
+INSERT INTO `khachhangtochucdoanhnghiep_log` VALUES (1,'2023-08-15 09:50:03','Insert',11,NULL,'Vũ Văn A',NULL,'100'),(2,'2023-08-15 09:50:03','Insert',12,NULL,'Hà Thị B',NULL,'10'),(3,'2023-08-15 09:50:03','Insert',13,NULL,'Đỗ Tiến C',NULL,'50');
 /*!40000 ALTER TABLE `khachhangtochucdoanhnghiep_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1415,7 +1415,7 @@ CREATE TABLE `nhanvien_log` (
 
 LOCK TABLES `nhanvien_log` WRITE;
 /*!40000 ALTER TABLE `nhanvien_log` DISABLE KEYS */;
-INSERT INTO `nhanvien_log` VALUES (11,'2022-08-15 09:48:44','Insert',1,NULL,'Hà Minh Y',NULL,'Hà Nội',NULL,'Nhân viên'),(12,'2022-08-15 09:48:44','Insert',2,NULL,'Tạ Văn Z',NULL,'Hà Nội',NULL,'Nhân viên');
+INSERT INTO `nhanvien_log` VALUES (11,'2023-08-15 09:48:44','Insert',1,NULL,'Hà Minh Y',NULL,'Hà Nội',NULL,'Nhân viên'),(12,'2023-08-15 09:48:44','Insert',2,NULL,'Tạ Văn Z',NULL,'Hà Nội',NULL,'Nhân viên');
 /*!40000 ALTER TABLE `nhanvien_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1614,7 +1614,7 @@ CREATE TABLE `nhanvien_sdt_log` (
 
 LOCK TABLES `nhanvien_sdt_log` WRITE;
 /*!40000 ALTER TABLE `nhanvien_sdt_log` DISABLE KEYS */;
-INSERT INTO `nhanvien_sdt_log` VALUES (15,'2022-08-15 09:48:55','Insert',1,NULL,'0904567146'),(16,'2022-08-15 09:48:55','Insert',2,NULL,'0976739552');
+INSERT INTO `nhanvien_sdt_log` VALUES (15,'2023-08-15 09:48:55','Insert',1,NULL,'0904567146'),(16,'2023-08-15 09:48:55','Insert',2,NULL,'0976739552');
 /*!40000 ALTER TABLE `nhanvien_sdt_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1650,7 +1650,7 @@ CREATE TABLE `sohuucanhan` (
 
 LOCK TABLES `sohuucanhan` WRITE;
 /*!40000 ALTER TABLE `sohuucanhan` DISABLE KEYS */;
-INSERT INTO `sohuucanhan` VALUES (6,'2022-08-15 10:00:22',1,1,NULL,1),(7,'2022-08-15 10:00:22',2,2,NULL,2),(8,'2022-08-15 10:00:22',3,3,NULL,2),(9,'2022-08-15 10:00:22',4,4,NULL,1),(10,'2022-08-15 10:00:22',5,5,NULL,1),(11,'2022-08-15 10:00:22',6,6,NULL,1),(12,'2022-08-15 10:00:22',7,7,NULL,1),(13,'2022-08-15 10:00:22',8,8,NULL,2),(14,'2022-08-15 10:00:22',9,9,NULL,2),(15,'2022-08-15 10:00:22',10,10,NULL,1),(16,'2022-08-15 10:00:22',1,NULL,14,1),(17,'2022-08-15 10:00:22',2,NULL,15,2),(18,'2022-08-15 10:00:22',3,NULL,16,1),(19,'2022-08-15 10:00:22',4,NULL,17,2),(20,'2022-08-15 10:00:22',5,NULL,18,2),(21,'2022-08-15 10:00:22',6,NULL,19,1),(22,'2022-08-15 10:00:22',7,NULL,20,1),(23,'2022-08-15 10:00:22',8,NULL,21,1),(24,'2022-08-15 10:00:22',9,NULL,22,1),(25,'2022-08-15 10:00:22',10,NULL,23,2);
+INSERT INTO `sohuucanhan` VALUES (6,'2023-08-15 10:00:22',1,1,NULL,1),(7,'2023-08-15 10:00:22',2,2,NULL,2),(8,'2023-08-15 10:00:22',3,3,NULL,2),(9,'2023-08-15 10:00:22',4,4,NULL,1),(10,'2023-08-15 10:00:22',5,5,NULL,1),(11,'2023-08-15 10:00:22',6,6,NULL,1),(12,'2023-08-15 10:00:22',7,7,NULL,1),(13,'2023-08-15 10:00:22',8,8,NULL,2),(14,'2023-08-15 10:00:22',9,9,NULL,2),(15,'2023-08-15 10:00:22',10,10,NULL,1),(16,'2023-08-15 10:00:22',1,NULL,14,1),(17,'2023-08-15 10:00:22',2,NULL,15,2),(18,'2023-08-15 10:00:22',3,NULL,16,1),(19,'2023-08-15 10:00:22',4,NULL,17,2),(20,'2023-08-15 10:00:22',5,NULL,18,2),(21,'2023-08-15 10:00:22',6,NULL,19,1),(22,'2023-08-15 10:00:22',7,NULL,20,1),(23,'2023-08-15 10:00:22',8,NULL,21,1),(24,'2023-08-15 10:00:22',9,NULL,22,1),(25,'2023-08-15 10:00:22',10,NULL,23,2);
 /*!40000 ALTER TABLE `sohuucanhan` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -1894,7 +1894,7 @@ CREATE TABLE `sohuucanhan_log` (
 
 LOCK TABLES `sohuucanhan_log` WRITE;
 /*!40000 ALTER TABLE `sohuucanhan_log` DISABLE KEYS */;
-INSERT INTO `sohuucanhan_log` VALUES (9,'2022-08-15 10:00:22','Insert',6,NULL,1,1,NULL,1),(10,'2022-08-15 10:00:22','Insert',7,NULL,2,2,NULL,2),(11,'2022-08-15 10:00:22','Insert',8,NULL,3,3,NULL,2),(12,'2022-08-15 10:00:22','Insert',9,NULL,4,4,NULL,1),(13,'2022-08-15 10:00:22','Insert',10,NULL,5,5,NULL,1),(14,'2022-08-15 10:00:22','Insert',11,NULL,6,6,NULL,1),(15,'2022-08-15 10:00:22','Insert',12,NULL,7,7,NULL,1),(16,'2022-08-15 10:00:22','Insert',13,NULL,8,8,NULL,2),(17,'2022-08-15 10:00:22','Insert',14,NULL,9,9,NULL,2),(18,'2022-08-15 10:00:22','Insert',15,NULL,10,10,NULL,1),(19,'2022-08-15 10:00:22','Insert',16,NULL,1,NULL,14,1),(20,'2022-08-15 10:00:22','Insert',17,NULL,2,NULL,15,2),(21,'2022-08-15 10:00:22','Insert',18,NULL,3,NULL,16,1),(22,'2022-08-15 10:00:22','Insert',19,NULL,4,NULL,17,2),(23,'2022-08-15 10:00:22','Insert',20,NULL,5,NULL,18,2),(24,'2022-08-15 10:00:22','Insert',21,NULL,6,NULL,19,1),(25,'2022-08-15 10:00:22','Insert',22,NULL,7,NULL,20,1),(26,'2022-08-15 10:00:22','Insert',23,NULL,8,NULL,21,1),(27,'2022-08-15 10:00:22','Insert',24,NULL,9,NULL,22,1),(28,'2022-08-15 10:00:22','Insert',25,NULL,10,NULL,23,2);
+INSERT INTO `sohuucanhan_log` VALUES (9,'2023-08-15 10:00:22','Insert',6,NULL,1,1,NULL,1),(10,'2023-08-15 10:00:22','Insert',7,NULL,2,2,NULL,2),(11,'2023-08-15 10:00:22','Insert',8,NULL,3,3,NULL,2),(12,'2023-08-15 10:00:22','Insert',9,NULL,4,4,NULL,1),(13,'2023-08-15 10:00:22','Insert',10,NULL,5,5,NULL,1),(14,'2023-08-15 10:00:22','Insert',11,NULL,6,6,NULL,1),(15,'2023-08-15 10:00:22','Insert',12,NULL,7,7,NULL,1),(16,'2023-08-15 10:00:22','Insert',13,NULL,8,8,NULL,2),(17,'2023-08-15 10:00:22','Insert',14,NULL,9,9,NULL,2),(18,'2023-08-15 10:00:22','Insert',15,NULL,10,10,NULL,1),(19,'2023-08-15 10:00:22','Insert',16,NULL,1,NULL,14,1),(20,'2023-08-15 10:00:22','Insert',17,NULL,2,NULL,15,2),(21,'2023-08-15 10:00:22','Insert',18,NULL,3,NULL,16,1),(22,'2023-08-15 10:00:22','Insert',19,NULL,4,NULL,17,2),(23,'2023-08-15 10:00:22','Insert',20,NULL,5,NULL,18,2),(24,'2023-08-15 10:00:22','Insert',21,NULL,6,NULL,19,1),(25,'2023-08-15 10:00:22','Insert',22,NULL,7,NULL,20,1),(26,'2023-08-15 10:00:22','Insert',23,NULL,8,NULL,21,1),(27,'2023-08-15 10:00:22','Insert',24,NULL,9,NULL,22,1),(28,'2023-08-15 10:00:22','Insert',25,NULL,10,NULL,23,2);
 /*!40000 ALTER TABLE `sohuucanhan_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1930,7 +1930,7 @@ CREATE TABLE `sohuutochucdoanhnghiep` (
 
 LOCK TABLES `sohuutochucdoanhnghiep` WRITE;
 /*!40000 ALTER TABLE `sohuutochucdoanhnghiep` DISABLE KEYS */;
-INSERT INTO `sohuutochucdoanhnghiep` VALUES (6,'2022-08-15 10:01:14',11,NULL,11,2),(7,'2022-08-15 10:01:14',12,NULL,12,1),(8,'2022-08-15 10:01:14',13,NULL,13,1),(9,'2022-08-15 10:01:14',11,24,NULL,2),(10,'2022-08-15 10:01:14',12,25,NULL,2),(11,'2022-08-15 10:01:14',13,26,NULL,2);
+INSERT INTO `sohuutochucdoanhnghiep` VALUES (6,'2023-08-15 10:01:14',11,NULL,11,2),(7,'2023-08-15 10:01:14',12,NULL,12,1),(8,'2023-08-15 10:01:14',13,NULL,13,1),(9,'2023-08-15 10:01:14',11,24,NULL,2),(10,'2023-08-15 10:01:14',12,25,NULL,2),(11,'2023-08-15 10:01:14',13,26,NULL,2);
 /*!40000 ALTER TABLE `sohuutochucdoanhnghiep` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -2174,7 +2174,7 @@ CREATE TABLE `sohuutochucdoanhnghiep_log` (
 
 LOCK TABLES `sohuutochucdoanhnghiep_log` WRITE;
 /*!40000 ALTER TABLE `sohuutochucdoanhnghiep_log` DISABLE KEYS */;
-INSERT INTO `sohuutochucdoanhnghiep_log` VALUES (6,'2022-08-15 10:01:14','Insert',6,NULL,11,NULL,11,2),(7,'2022-08-15 10:01:14','Insert',7,NULL,12,NULL,12,1),(8,'2022-08-15 10:01:14','Insert',8,NULL,13,NULL,13,1),(9,'2022-08-15 10:01:14','Insert',9,NULL,11,24,NULL,2),(10,'2022-08-15 10:01:14','Insert',10,NULL,12,25,NULL,2),(11,'2022-08-15 10:01:14','Insert',11,NULL,13,26,NULL,2);
+INSERT INTO `sohuutochucdoanhnghiep_log` VALUES (6,'2023-08-15 10:01:14','Insert',6,NULL,11,NULL,11,2),(7,'2023-08-15 10:01:14','Insert',7,NULL,12,NULL,12,1),(8,'2023-08-15 10:01:14','Insert',8,NULL,13,NULL,13,1),(9,'2023-08-15 10:01:14','Insert',9,NULL,11,24,NULL,2),(10,'2023-08-15 10:01:14','Insert',10,NULL,12,25,NULL,2),(11,'2023-08-15 10:01:14','Insert',11,NULL,13,26,NULL,2);
 /*!40000 ALTER TABLE `sohuutochucdoanhnghiep_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2369,7 +2369,7 @@ CREATE TABLE `taikhoan_log` (
 
 LOCK TABLES `taikhoan_log` WRITE;
 /*!40000 ALTER TABLE `taikhoan_log` DISABLE KEYS */;
-INSERT INTO `taikhoan_log` VALUES (20,'2022-08-15 09:54:07','Insert',1,NULL,'thường'),(21,'2022-08-15 09:54:07','Insert',2,NULL,'thường'),(22,'2022-08-15 09:54:07','Insert',3,NULL,'thường'),(23,'2022-08-15 09:54:07','Insert',4,NULL,'thường'),(24,'2022-08-15 09:54:07','Insert',5,NULL,'thường'),(25,'2022-08-15 09:54:07','Insert',6,NULL,'thường'),(26,'2022-08-15 09:54:07','Insert',7,NULL,'thường'),(27,'2022-08-15 09:54:07','Insert',8,NULL,'thường'),(28,'2022-08-15 09:54:07','Insert',9,NULL,'thường'),(29,'2022-08-15 09:54:07','Insert',10,NULL,'thường'),(30,'2022-08-15 09:54:07','Insert',11,NULL,'thường'),(31,'2022-08-15 09:54:07','Insert',12,NULL,'thường'),(32,'2022-08-15 09:54:07','Insert',13,NULL,'thường'),(33,'2022-08-15 09:54:07','Insert',14,NULL,'thường'),(34,'2022-08-15 09:54:07','Insert',15,NULL,'thường'),(35,'2022-08-15 09:57:08','Insert',16,NULL,'thường'),(36,'2022-08-15 09:57:08','Insert',17,NULL,'thường'),(37,'2022-08-15 09:57:08','Insert',18,NULL,'thường'),(38,'2022-08-15 09:57:08','Insert',19,NULL,'thường'),(39,'2022-08-15 09:57:08','Insert',20,NULL,'thường'),(40,'2022-08-15 09:57:08','Insert',21,NULL,'thường'),(41,'2022-08-15 09:57:08','Insert',22,NULL,'thường'),(42,'2022-08-15 09:57:08','Insert',23,NULL,'thường'),(43,'2022-08-15 09:57:08','Insert',24,NULL,'thường'),(44,'2022-08-15 09:57:08','Insert',25,NULL,'thường'),(45,'2022-08-15 09:57:30','Insert',26,NULL,'thường');
+INSERT INTO `taikhoan_log` VALUES (20,'2023-08-15 09:54:07','Insert',1,NULL,'thường'),(21,'2023-08-15 09:54:07','Insert',2,NULL,'thường'),(22,'2023-08-15 09:54:07','Insert',3,NULL,'thường'),(23,'2023-08-15 09:54:07','Insert',4,NULL,'thường'),(24,'2023-08-15 09:54:07','Insert',5,NULL,'thường'),(25,'2023-08-15 09:54:07','Insert',6,NULL,'thường'),(26,'2023-08-15 09:54:07','Insert',7,NULL,'thường'),(27,'2023-08-15 09:54:07','Insert',8,NULL,'thường'),(28,'2023-08-15 09:54:07','Insert',9,NULL,'thường'),(29,'2023-08-15 09:54:07','Insert',10,NULL,'thường'),(30,'2023-08-15 09:54:07','Insert',11,NULL,'thường'),(31,'2023-08-15 09:54:07','Insert',12,NULL,'thường'),(32,'2023-08-15 09:54:07','Insert',13,NULL,'thường'),(33,'2023-08-15 09:54:07','Insert',14,NULL,'thường'),(34,'2023-08-15 09:54:07','Insert',15,NULL,'thường'),(35,'2023-08-15 09:57:08','Insert',16,NULL,'thường'),(36,'2023-08-15 09:57:08','Insert',17,NULL,'thường'),(37,'2023-08-15 09:57:08','Insert',18,NULL,'thường'),(38,'2023-08-15 09:57:08','Insert',19,NULL,'thường'),(39,'2023-08-15 09:57:08','Insert',20,NULL,'thường'),(40,'2023-08-15 09:57:08','Insert',21,NULL,'thường'),(41,'2023-08-15 09:57:08','Insert',22,NULL,'thường'),(42,'2023-08-15 09:57:08','Insert',23,NULL,'thường'),(43,'2023-08-15 09:57:08','Insert',24,NULL,'thường'),(44,'2023-08-15 09:57:08','Insert',25,NULL,'thường'),(45,'2023-08-15 09:57:30','Insert',26,NULL,'thường');
 /*!40000 ALTER TABLE `taikhoan_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2394,7 +2394,7 @@ CREATE TABLE `taikhoanguitien` (
 
 LOCK TABLES `taikhoanguitien` WRITE;
 /*!40000 ALTER TABLE `taikhoanguitien` DISABLE KEYS */;
-INSERT INTO `taikhoanguitien` VALUES (14,1,10123),(15,1,19657),(16,1,25000),(17,1,17000),(18,1,18000),(19,1,45000),(20,1,56000),(21,1,24000),(22,1,35000),(23,1,56600),(24,1,56748),(25,1,23462),(26,1,32420);
+INSERT INTO `taikhoanguitien` VALUES (14,1,10123000),(15,1,19657000),(16,1,25000000),(17,1,17000000),(18,1,18000000),(19,1,45000000),(20,1,56000000),(21,1,24000000),(22,1,350000000),(23,1,56600000),(24,1,56748000),(25,1,23462000),(26,1,32420000);
 /*!40000 ALTER TABLE `taikhoanguitien` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -2557,7 +2557,7 @@ CREATE TABLE `taikhoanguitien_log` (
 
 LOCK TABLES `taikhoanguitien_log` WRITE;
 /*!40000 ALTER TABLE `taikhoanguitien_log` DISABLE KEYS */;
-INSERT INTO `taikhoanguitien_log` VALUES (10,'2022-08-15 09:58:46','Insert',14,NULL,'1',NULL,'10000'),(11,'2022-08-15 09:58:46','Insert',15,NULL,'1',NULL,'20000'),(12,'2022-08-15 09:58:46','Insert',16,NULL,'1',NULL,'25000'),(13,'2022-08-15 09:58:46','Insert',17,NULL,'1',NULL,'17000'),(14,'2022-08-15 09:58:46','Insert',18,NULL,'1',NULL,'18000'),(15,'2022-08-15 09:58:46','Insert',19,NULL,'1',NULL,'45000'),(16,'2022-08-15 09:58:46','Insert',20,NULL,'1',NULL,'56000'),(17,'2022-08-15 09:58:46','Insert',21,NULL,'1',NULL,'24000'),(18,'2022-08-15 09:58:46','Insert',22,NULL,'1',NULL,'35000'),(19,'2022-08-15 09:58:46','Insert',23,NULL,'1',NULL,'56600'),(20,'2022-08-15 09:58:46','Insert',24,NULL,'1',NULL,'56900'),(21,'2022-08-15 09:58:46','Insert',25,NULL,'1',NULL,'23450'),(22,'2022-08-15 09:58:46','Insert',26,NULL,'1',NULL,'32450'),(28,'2022-08-15 10:28:40','Update',14,'1','1','10000','10123'),(29,'2022-08-15 10:28:40','Update',15,'1','1','20000','19657'),(30,'2022-08-15 10:34:24','Update',24,'1','1','56900','56748'),(31,'2022-08-15 10:34:24','Update',25,'1','1','23450','23462'),(32,'2022-08-15 10:34:24','Update',26,'1','1','32450','32420');
+INSERT INTO `taikhoanguitien_log` VALUES (10,'2023-08-15 09:58:46','Insert',14,NULL,'1',NULL,'10000000'),(11,'2023-08-15 09:58:46','Insert',15,NULL,'1',NULL,'20000000'),(12,'2023-08-15 09:58:46','Insert',16,NULL,'1',NULL,'25000000'),(13,'2023-08-15 09:58:46','Insert',17,NULL,'1',NULL,'17000000'),(14,'2023-08-15 09:58:46','Insert',18,NULL,'1',NULL,'18000000'),(15,'2023-08-15 09:58:46','Insert',19,NULL,'1',NULL,'45000000'),(16,'2023-08-15 09:58:46','Insert',20,NULL,'1',NULL,'56000000'),(17,'2023-08-15 09:58:46','Insert',21,NULL,'1',NULL,'24000000'),(18,'2023-08-15 09:58:46','Insert',22,NULL,'1',NULL,'35000000'),(19,'2023-08-15 09:58:46','Insert',23,NULL,'1',NULL,'56600000'),(20,'2023-08-15 09:58:46','Insert',24,NULL,'1',NULL,'56900000'),(21,'2023-08-15 09:58:46','Insert',25,NULL,'1',NULL,'23450000'),(22,'2023-08-15 09:58:46','Insert',26,NULL,'1',NULL,'32450000'),(28,'2023-08-15 10:28:40','Update',14,'1','1','10000000','10123000'),(29,'2023-08-15 10:28:40','Update',15,'1','1','20000000','19657000'),(30,'2023-08-15 10:34:24','Update',24,'1','1','56900000','56748000'),(31,'2023-08-15 10:34:24','Update',25,'1','1','23450000','23462000'),(32,'2023-08-15 10:34:24','Update',26,'1','1','32450000','32420000');
 /*!40000 ALTER TABLE `taikhoanguitien_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2583,7 +2583,7 @@ CREATE TABLE `taikhoantindung` (
 
 LOCK TABLES `taikhoantindung` WRITE;
 /*!40000 ALTER TABLE `taikhoantindung` DISABLE KEYS */;
-INSERT INTO `taikhoantindung` VALUES (1,100000,1623),(2,100000,1484),(3,100000,2924),(4,100000,4745),(5,100000,3465),(6,100000,5063),(7,100000,5136),(8,100000,2552),(9,100000,4850),(10,100000,1853);
+INSERT INTO `taikhoantindung` VALUES (1,100000000,1623000),(2,100000000,1484000),(3,100000000,2924000),(4,100000000,4745000),(5,100000000,3465000),(6,100000000,5063000),(7,100000000,5136000),(8,100000000,2552000),(9,100000000,4850000),(10,100000000,1853000);
 /*!40000 ALTER TABLE `taikhoantindung` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -2746,7 +2746,7 @@ CREATE TABLE `taikhoantindung_log` (
 
 LOCK TABLES `taikhoantindung_log` WRITE;
 /*!40000 ALTER TABLE `taikhoantindung_log` DISABLE KEYS */;
-INSERT INTO `taikhoantindung_log` VALUES (6,'2022-08-15 09:55:37','Insert',1,NULL,'100000',NULL,'1200'),(7,'2022-08-15 09:55:37','Insert',2,NULL,'100000',NULL,'1250'),(8,'2022-08-15 09:55:37','Insert',3,NULL,'100000',NULL,'2500'),(9,'2022-08-15 09:55:37','Insert',4,NULL,'100000',NULL,'4500'),(10,'2022-08-15 09:55:37','Insert',5,NULL,'100000',NULL,'2700'),(11,'2022-08-15 09:55:37','Insert',6,NULL,'100000',NULL,'4500'),(12,'2022-08-15 09:55:37','Insert',7,NULL,'100000',NULL,'4500'),(13,'2022-08-15 09:55:37','Insert',8,NULL,'100000',NULL,'2100'),(14,'2022-08-15 09:55:37','Insert',9,NULL,'100000',NULL,'4500'),(15,'2022-08-15 09:55:37','Insert',10,NULL,'100000',NULL,'1200'),(16,'2022-08-15 10:17:16','Update',1,'100000','100000','1200','1623'),(17,'2022-08-15 10:17:16','Update',2,'100000','100000','1250','1484'),(18,'2022-08-15 10:17:16','Update',3,'100000','100000','2500','2924'),(19,'2022-08-15 10:17:16','Update',4,'100000','100000','4500','4745'),(20,'2022-08-15 10:17:16','Update',5,'100000','100000','2700','3465'),(21,'2022-08-15 10:17:16','Update',6,'100000','100000','4500','5063'),(22,'2022-08-15 10:17:16','Update',7,'100000','100000','4500','5136'),(23,'2022-08-15 10:17:16','Update',8,'100000','100000','2100','2552'),(24,'2022-08-15 10:17:16','Update',9,'100000','100000','4500','4850'),(25,'2022-08-15 10:17:16','Update',10,'100000','100000','1200','1853');
+INSERT INTO `taikhoantindung_log` VALUES (6,'2023-08-15 09:55:37','Insert',1,NULL,'100000000',NULL,'1200000'),(7,'2023-08-15 09:55:37','Insert',2,NULL,'100000000',NULL,'1250000'),(8,'2023-08-15 09:55:37','Insert',3,NULL,'100000000',NULL,'2500000'),(9,'2023-08-15 09:55:37','Insert',4,NULL,'100000000',NULL,'4500000'),(10,'2023-08-15 09:55:37','Insert',5,NULL,'100000000',NULL,'2700000'),(11,'2023-08-15 09:55:37','Insert',6,NULL,'100000000',NULL,'4500000'),(12,'2023-08-15 09:55:37','Insert',7,NULL,'100000000',NULL,'4500000'),(13,'2023-08-15 09:55:37','Insert',8,NULL,'100000000',NULL,'2100000'),(14,'2023-08-15 09:55:37','Insert',9,NULL,'100000000',NULL,'4500000'),(15,'2023-08-15 09:55:37','Insert',10,NULL,'100000000',NULL,'1200000'),(16,'2023-08-15 10:17:16','Update',1,'100000000','100000000','1200','1623'),(17,'2023-08-15 10:17:16','Update',2,'100000000','100000000','1250000','1484000'),(18,'2023-08-15 10:17:16','Update',3,'100000000','100000000','2500000','2924000'),(19,'2023-08-15 10:17:16','Update',4,'100000000','100000000','4500000','4745000'),(20,'2023-08-15 10:17:16','Update',5,'100000000','100000000','2700000','3465000'),(21,'2023-08-15 10:17:16','Update',6,'100000000','100000000','4500000','5063000'),(22,'2023-08-15 10:17:16','Update',7,'100000000','100000000','4500000','5136000'),(23,'2023-08-15 10:17:16','Update',8,'100000000','100000000','2100000','2552000'),(24,'2023-08-15 10:17:16','Update',9,'100000000','100000000','4500000','4850000'),(25,'2023-08-15 10:17:16','Update',10,'100000000','100000000','1200000','1853000');
 /*!40000 ALTER TABLE `taikhoantindung_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2936,7 +2936,7 @@ CREATE TABLE `taikhoanvaytien_log` (
 
 LOCK TABLES `taikhoanvaytien_log` WRITE;
 /*!40000 ALTER TABLE `taikhoanvaytien_log` DISABLE KEYS */;
-INSERT INTO `taikhoanvaytien_log` VALUES (11,'2022-08-15 09:56:06','Insert',11,NULL,'6',NULL,'1500'),(12,'2022-08-15 09:56:06','Insert',12,NULL,'6',NULL,'2700'),(13,'2022-08-15 09:56:06','Insert',13,NULL,'6',NULL,'7000'),(14,'2022-08-15 10:34:24','Update',11,'6','6','1500','1800'),(15,'2022-08-15 10:34:24','Update',12,'6','6','2700','2712'),(16,'2022-08-15 10:34:24','Update',13,'6','6','7000','6980'),(17,'2022-08-15 10:34:24','Update',11,'6','6','1800','1770');
+INSERT INTO `taikhoanvaytien_log` VALUES (11,'2023-08-15 09:56:06','Insert',11,NULL,'6',NULL,'1500000'),(12,'2023-08-15 09:56:06','Insert',12,NULL,'6',NULL,'2700000'),(13,'2023-08-15 09:56:06','Insert',13,NULL,'6',NULL,'7000000'),(14,'2023-08-15 10:34:24','Update',11,'6','6','1500000','1800000'),(15,'2023-08-15 10:34:24','Update',12,'6','6','2700000','2712000'),(16,'2023-08-15 10:34:24','Update',13,'6','6','7000000','6980000'),(17,'2023-08-15 10:34:24','Update',11,'6','6','1800000','1770000');
 /*!40000 ALTER TABLE `taikhoanvaytien_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3129,11 +3129,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SuaKhachHang`(
     in QuyMo varchar(255)
 )
 BEGIN
-	update khachhang set Ten=Ten, DiaChi=DiaChi 
-    where MaKH=MaKH;
+	update khachhang kh set Ten=Ten, DiaChi=DiaChi 
+    where kh.MaKH=MaKH;
     
-    update khachhang_sdt set Sdt=Sdt
-    where MaKH=MaKH;
+    update khachhang_sdt kh set Sdt=Sdt
+    where kh.MaKH=MaKH;
     
     update khachhangcanhan set NgheNghiep=NgheNghiep, ThuNhap=ThuNhap
     where MaKHCN=MaKH;
@@ -3165,11 +3165,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SuaKhachHangCaNhan`(
     in ThuNhap varchar(255)
 )
 BEGIN
-	update khachhang set Ten=Ten, DiaChi=DiaChi 
-    where MaKH=MaKH;
+	update khachhang kh set Ten=Ten, DiaChi=DiaChi 
+    where kh.MaKH=MaKH;
     
-    update khachhang_sdt set Sdt=Sdt
-    where MaKH=MaKH;
+    update khachhang_sdt kh set Sdt=Sdt
+    where kh.MaKH=MaKH;
     
     update khachhangcanhan set NgheNghiep=NgheNghiep, ThuNhap=ThuNhap
     where MaKHCN=MaKH;
@@ -3198,11 +3198,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SuaKhachHangToChucDoanhNghiep`(
     in QuyMo varchar(255)
 )
 BEGIN
-	update khachhang set Ten=Ten, DiaChi=DiaChi 
-    where MaKH=MaKH;
+	update khachhang kh set Ten=Ten, DiaChi=DiaChi 
+    where kh.MaKH=MaKH;
     
     update khachhang_sdt set Sdt=Sdt
-    where MaKH=MaKH;
+    where kh.MaKH=MaKH;
     
     update khachhangtochucdoanhnghiep set NguoiDaiDien=NguoiDaiDien, QuyMo=QuyMo 
     where MaKHTCDN=MaKH;
@@ -3230,11 +3230,13 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SuaNhanVien`(
     in Sdt varchar(12)
 )
 BEGIN
-	update nhanvien set Ten=Ten, DiaChi=DiaChi, CapBac=CapBac
-    where MaNV=MaNV;
-    
-    update nhanvien_sdt set Sdt=Sdt
-    where MaNV=MaNV;
+	UPDATE nhanvien nv
+    SET nv.Ten = Ten, nv.DiaChi = DiaChi, nv.CapBac = CapBac
+    WHERE nv.MaNV = MaNV;
+
+    UPDATE nhanvien_sdt nv
+    SET nv.Sdt = Sdt
+    WHERE nv.MaNV = MaNV;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -3260,8 +3262,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SuaTaiKhoan`(
     in SoNo varchar(255)
 )
 BEGIN
-	update taikhoan set Hang=Hang
-    where MaTK=MaTK;
+	update taikhoan tk set Hang=Hang
+    where tk.MaTK=MaTK;
     
     update taikhoanguitien set LaiSuat=LaiSuat, SoDu=SoDu
     where MaTKGT=MaTK;
@@ -3295,11 +3297,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SuaTaiKhoanGuiTien`(
 	in LaiSuat varchar(255)
 )
 BEGIN
-	update taikhoan set Hang=Hang
-    where MaTK=MaTK;
+	update taikhoan tk set Hang=Hang
+    where tk.MaTK = MaTK;
     
     update taikhoanguitien set LaiSuat=LaiSuat, SoDu=SoDu
-    where MaTKGT=MaTK;
+    where MaTKGT = MaTK;
     
 END ;;
 DELIMITER ;
@@ -3324,11 +3326,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SuaTaiKhoanTinDung`(
     in SoNo varchar(255)
 )
 BEGIN
-	update taikhoan set Hang=Hang
-    where MaTK=MaTK;
+	update taikhoan tk set Hang=Hang
+    where tk.MaTK = MaTK;
     
     update taikhoantindung set HanMuc=HanMuc, SoNo=SoNo
-    where MaTKTD=MaTK;
+    where MaTKTD = MaTK;
     
 END ;;
 DELIMITER ;
@@ -3353,11 +3355,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SuaTaiKhoanVayTien`(
     in SoNo varchar(255)
 )
 BEGIN
-	update taikhoan set Hang=Hang
-    where MaTK=MaTK;
+	update taikhoan tk set Hang=Hang
+    where tk.MaTK = MaTK;
     
-    update taikhoanvaytien set LaiSuat=LaiSuat, SoNo=SoNo
-    where MaTKVT=MaTK;
+    update taikhoanvaytien tk set LaiSuat=LaiSuat, SoNo=SoNo
+    where tk.MaTKVT = MaTK;
     
 END ;;
 DELIMITER ;
@@ -3975,11 +3977,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `TimKiemGiaoDichCaNhan`(
     in MaTK varchar(255)
 )
 BEGIN
-	select * from giaodichcanhan
-    where (MaGD is null or MaGD = "" or MaGD = cast(MaGD as unsigned))
-		and (MaKH is null or MaKH = "" or MaKHCN = cast(MaKH as unsigned))
-		and (MaNV is null or MaNV = "" or MaNV = cast(MaNV as unsigned))
-		and (MaTK is null or MaTK = "" or MaTKTD = cast(MaTK as unsigned) or MaTKGT = cast(MaTK as unsigned));
+	select * from giaodichcanhan gdcn
+    where (MaGD is null or MaGD = "" or gdcn.MaGD = cast(MaGD as unsigned))
+		and (MaKH is null or MaKH = "" or gdcn.MaKHCN = cast(MaKH as unsigned))
+		and (MaNV is null or MaNV = "" or gdcn.MaNV = cast(MaNV as unsigned))
+		and (MaTK is null or MaTK = "" or gdcn.MaTKTD = cast(MaTK as unsigned) or gdcn.MaTKGT = cast(MaTK as unsigned));
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -4003,11 +4005,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `TimKiemGiaoDichToChucDoanhNghiep`(
     in MaTK varchar(255)
 )
 BEGIN
-	select * from giaodichtochucdoanhnghiep
-    where (MaGD is null or MaGD = "" or MaGD = cast(MaGD as unsigned))
-		and (MaKH is null or MaKH = "" or MaKHTCDN = cast(MaKH as unsigned))
-		and (MaNV is null or MaNV = "" or MaNV = cast(MaNV as unsigned))
-		and (MaTK is null or MaTK = "" or MaTKVT = cast(MaTK as unsigned) or MaTKGT = cast(MaTK as unsigned));
+	select * from giaodichtochucdoanhnghiep gdtc
+    where (MaGD is null or MaGD = "" or gdtc.MaGD = cast(MaGD as unsigned))
+		and (MaKH is null or MaKH = "" or gdtc.MaKHTCDN = cast(MaKH as unsigned))
+		and (MaNV is null or MaNV = "" or gdtc.MaNV = cast(MaNV as unsigned))
+		and (MaTK is null or MaTK = "" or gdtc.MaTKVT = cast(MaTK as unsigned) or gdtc.MaTKGT = cast(MaTK as unsigned));
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -4171,7 +4173,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `TimKiemTaiKhoanGuiTien`(
 )
 BEGIN
 	select * from taikhoan tk
-	join taikhoanguitien on tk.MaTK = tkgt.MaTKGT
+	join taikhoanguitien tkgt on tk.MaTK = tkgt.MaTKGT
     where (MaTK is null or MaTK = "" or tk.MaTK = cast(MaTK as unsigned));
 END ;;
 DELIMITER ;
@@ -4217,7 +4219,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `TimKiemTaiKhoanVayTien`(
 )
 BEGIN
 	select * from taikhoan tk
-	join taikhoanvaytien on tk.MaTK = tkgt.MaTKVT
+	join taikhoanvaytien tkgt on tk.MaTK = tkgt.MaTKVT
     where (MaTK is null or MaTK = "" or tk.MaTK = cast(MaTK as unsigned));
 END ;;
 DELIMITER ;
@@ -4408,9 +4410,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `XoaNhanVien`(
 	in MaNV varchar(255)
 )
 BEGIN
-	delete from nhanvien where MaNV=MaNV;
+	delete from nhanvien nv where nv.MaNV=MaNV;
     
-    delete from nhanvien_sdt where MaNV=MaNV;
+    delete from nhanvien_sdt nv where nv.MaNV=MaNV;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -4463,13 +4465,13 @@ BEGIN
 	set FOREIGN_KEY_CHECKS = 0;
     
     delete from taikhoan tk
-    where MaTK = tk.MaTK;
+    where tk.MaTK = MaTK;
     
 	delete from taikhoanguitien tkgt
-    where MaTK = tkgt.MaTKGT;
+    where tkgt.MaTKGT = MaTK;
     
 	delete from sohuucanhan shcn
-    where MaTK = shcn.MaTKGT;
+    where shcn.MaTKGT = MaTK;
     
     set FOREIGN_KEY_CHECKS = 1;
 END ;;
@@ -4495,13 +4497,13 @@ BEGIN
 	set FOREIGN_KEY_CHECKS = 0;
     
     delete from taikhoan tk
-    where MaTK = tk.MaTK;
+    where tk.MaTK = MaTK;
     
 	delete from taikhoanguitien tkgt
-    where MaTK = tkgt.MaTKGT;
+    where tkgt.MaTKGT = MaTK;
     
 	delete from sohuutochucdoanhnghiep shtcdn
-    where MaTK = shtcdn.MaTKGT;
+    where shtcdn.MaTKGT = MaTK;
     
     set FOREIGN_KEY_CHECKS = 1;
 END ;;
@@ -4527,13 +4529,13 @@ BEGIN
 	set FOREIGN_KEY_CHECKS = 0;
     
 	delete from taikhoan tk
-    where MaTK = tk.MaTK;
+    where tk.MaTK = MaTK;
     
 	delete from taikhoantindung tktd
-    where MaTK = tktd.MaTKTD;
+    where tktd.MaTKTD = MaTK;
     
 	delete from sohuucanhan shcn
-    where MaTK = shcn.MaTKTD;
+    where shcn.MaTKTD = MaTK;
     
     set FOREIGN_KEY_CHECKS = 1;
 END ;;
@@ -4559,13 +4561,13 @@ BEGIN
 	set FOREIGN_KEY_CHECKS = 0;
     
     delete from taikhoan tk
-    where MaTK = tk.MaTK;
+    where tk.MaTK = MaTK;
     
 	delete from taikhoanvaytien tkvt
-    where MaTK = tkvt.MaTKVT;
+    where tkvt.MaTKVT = MaTK;
     
 	delete from sohuutochucdoanhnghiep shtcdn
-    where MaTK = shtcdn.MaTKVT;
+    where shtcdn.MaTKVT = MaTK;
     
     set FOREIGN_KEY_CHECKS = 1;
 END ;;
@@ -4584,4 +4586,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-15 11:14:46
+-- Dump completed on 2023-08-15 11:14:46

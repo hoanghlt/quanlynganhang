@@ -4,13 +4,14 @@ import mysql.connector
 from PyQt5 import QtWidgets, uic, QtGui, QtCore
 from PyQt5.QtWidgets import QHeaderView
 from mysql.connector import Error
-from SqlHelper import close_db_connection, create_db_connection
+from data.SqlHelper import close_db_connection, create_db_connection
+from common import common
 
 class ThemKhachHang(QtWidgets.QDialog):
     def __init__(self):
         self.db_connection = create_db_connection()
         super(ThemKhachHang, self).__init__()
-        uic.loadUi('UI/ThemKhachHang.ui', self)
+        uic.loadUi('ui/ThemKhachHang.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
 
@@ -22,6 +23,7 @@ class ThemKhachHang(QtWidgets.QDialog):
             mycursor = self.db_connection.cursor()
             res = mycursor.callproc("TaoMaKH", [0, ])
             self.textEdit_1.setPlainText(str(res[0]))
+            self.textEdit_1.setDisabled(True)
             close_db_connection(mycursor)
             
 
@@ -95,7 +97,7 @@ class SuaKhachHang(QtWidgets.QDialog):
     def __init__(self):
         self.db_connection = create_db_connection()
         super(SuaKhachHang, self).__init__()
-        uic.loadUi('UI/SuaKhachHang.ui', self)
+        uic.loadUi('ui/SuaKhachHang.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
 
@@ -185,7 +187,7 @@ class TimKiemKhachHang(QtWidgets.QDialog):
     def __init__(self):
         self.db_connection = create_db_connection()
         super(TimKiemKhachHang, self).__init__()
-        uic.loadUi('UI/TimKiemKhachHang.ui', self)
+        uic.loadUi('ui/TimKiemKhachHang.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
 
@@ -258,7 +260,7 @@ class TimKiemKhachHang(QtWidgets.QDialog):
                 
                 close_db_connection(mycursor)
 
-            self.autosizeColumns(self.tableWidget)
+            common.autosizeColumns(self.tableWidget)
             self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         except Error as e:
@@ -267,45 +269,56 @@ class TimKiemKhachHang(QtWidgets.QDialog):
             msg.setText(e.msg)
             msg.exec_()
 
-    def autosizeColumns(self, tableWidget):
-        total_width = tableWidget.verticalHeader().width()  # Bao gồm cả cột index
-        total_width += tableWidget.horizontalHeader().length()  # Bao gồm cả hàng index
-
-        for col in range(tableWidget.columnCount()):
-            total_width += tableWidget.columnWidth(col)
-
-        viewport_width = tableWidget.viewport().width()
-        if total_width > viewport_width:
-            ratio = viewport_width / total_width
-            for col in range(tableWidget.columnCount()):
-                tableWidget.setColumnWidth(
-                    col, int(tableWidget.columnWidth(col) * ratio))
-        else:
-            for col in range(tableWidget.columnCount()):
-                tableWidget.setColumnWidth(
-                    col, tableWidget.horizontalHeader().defaultSectionSize())
-
     def on_click_table(self, item):
         dialog = SuaKhachHang()
         dialog.openDialog = self
 
         dialog.comboBox.setCurrentText(self.comboBox.currentText())
-
-        dialog.textEdit.setPlainText(
-            self.tableWidget.item(item.row(), 0).text())
-        dialog.textEdit_2.setPlainText(
-            self.tableWidget.item(item.row(), 1).text())
-        dialog.textEdit_3.setPlainText(
-            self.tableWidget.item(item.row(), 2).text())
-        dialog.textEdit_4.setPlainText(
-            self.tableWidget.item(item.row(), 3).text())
-        dialog.textEdit_5.setPlainText(
-            self.tableWidget.item(item.row(), 4).text())
-        dialog.textEdit_6.setPlainText(
-            self.tableWidget.item(item.row(), 5).text())
+        
+        if self.comboBox.currentText() == "Khách hàng cá nhân":
+            dialog.textEdit.setPlainText(
+                self.tableWidget.item(item.row(), 0).text())
+            dialog.textEdit_2.setPlainText(
+                self.tableWidget.item(item.row(), 1).text())
+            dialog.textEdit_3.setPlainText(
+                self.tableWidget.item(item.row(), 2).text())
+            dialog.textEdit_4.setPlainText(
+                self.tableWidget.item(item.row(), 3).text())
+            dialog.textEdit_5.setPlainText(
+                self.tableWidget.item(item.row(), 4).text())
+            dialog.textEdit_6.setPlainText(
+                self.tableWidget.item(item.row(), 5).text())
+            
+            #Điều chỉnh lại view
+            dialog.textEdit_5.setDisabled(False)
+            dialog.textEdit_6.setDisabled(False)
+            dialog.textEdit_7.setDisabled(True)
+            dialog.textEdit_8.setDisabled(True)
+            dialog.textEdit_7.clear()
+            dialog.textEdit_8.clear()
+        else:
+            dialog.textEdit.setPlainText(
+                self.tableWidget.item(item.row(), 0).text())
+            dialog.textEdit_2.setPlainText(
+                self.tableWidget.item(item.row(), 1).text())
+            dialog.textEdit_3.setPlainText(
+                self.tableWidget.item(item.row(), 2).text())
+            dialog.textEdit_4.setPlainText(
+                self.tableWidget.item(item.row(), 3).text())
+            dialog.textEdit_7.setPlainText(
+                self.tableWidget.item(item.row(), 4).text())
+            dialog.textEdit_8.setPlainText(
+                self.tableWidget.item(item.row(), 5).text())
+            
+            #Điều chỉnh lại view
+            dialog.textEdit_5.setDisabled(True)
+            dialog.textEdit_6.setDisabled(True)
+            dialog.textEdit_7.setDisabled(False)
+            dialog.textEdit_8.setDisabled(False)
+            dialog.textEdit_5.clear()
+            dialog.textEdit_6.clear()
 
         dialog.exec_()
-
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

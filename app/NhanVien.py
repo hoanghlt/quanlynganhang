@@ -1,14 +1,16 @@
 from PyQt5 import QtWidgets, uic, QtGui, QtCore
+from PyQt5.QtWidgets import QHeaderView
 import sys
 import mysql.connector
 from mysql.connector import Error
-from SqlHelper import create_db_connection, close_db_connection
+from data.SqlHelper import create_db_connection, close_db_connection
+from common import common
 
 class ThemNhanVien(QtWidgets.QDialog):
     def __init__(self):
         self.db_connection = create_db_connection()
         super(ThemNhanVien, self).__init__()
-        uic.loadUi('UI/ThemNhanVien.ui', self)
+        uic.loadUi('ui/ThemNhanVien.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
 
@@ -19,6 +21,7 @@ class ThemNhanVien(QtWidgets.QDialog):
             mycursor = self.db_connection.cursor()
             res = mycursor.callproc("TaoMaNV", [0, ])            
             self.textEdit.setPlainText(str(res[0]))
+            self.textEdit.setDisabled(True)
             close_db_connection(mycursor)
 
         self.show()
@@ -56,7 +59,7 @@ class SuaNhanVien(QtWidgets.QDialog):
     def __init__(self):
         self.db_connection = create_db_connection()
         super(SuaNhanVien, self).__init__()
-        uic.loadUi('UI/SuaNhanVien.ui', self)
+        uic.loadUi('ui/SuaNhanVien.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
 
@@ -126,7 +129,7 @@ class TimKiemNhanVien(QtWidgets.QDialog):
     def __init__(self):
         self.db_connection = create_db_connection()
         super(TimKiemNhanVien, self).__init__()
-        uic.loadUi('UI/TimKiemNhanVien.ui', self)
+        uic.loadUi('ui/TimKiemNhanVien.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
 
@@ -161,12 +164,15 @@ class TimKiemNhanVien(QtWidgets.QDialog):
                         self.tableWidget.setItem(rowPosition, 4, QtWidgets.QTableWidgetItem(str(x[3])))
 
                         self.tableWidget.item(rowPosition, 0).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
-                        self.tableWidget.item(rowPosition, 1).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
-                        self.tableWidget.item(rowPosition, 2).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        self.tableWidget.item(rowPosition, 1).setTextAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
+                        self.tableWidget.item(rowPosition, 2).setTextAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
                         self.tableWidget.item(rowPosition, 3).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
                         self.tableWidget.item(rowPosition, 4).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
                 
                 close_db_connection(mycursor)
+            
+            common.autosizeColumns(self.tableWidget)
+            self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
                 
         except Error as e:
             msg = QtWidgets.QMessageBox()
