@@ -474,7 +474,7 @@ CREATE TABLE `khachhang` (
 
 LOCK TABLES `khachhang` WRITE;
 /*!40000 ALTER TABLE `khachhang` DISABLE KEYS */;
-INSERT INTO `khachhang` VALUES (1,'Nguyễn Văn A','Hà Nội'),(2,'Trần Văn B','Hà Nam'),(3,'Vũ Thị C','Thái Nguyên'),(4,'Tạ Văn D','Hà Nội'),(5,'Phạm Văn E','Thanh Hoá'),(6,'Ngô Tiến F','Hà Nội'),(7,'Lê Đình G','Hà Đông'),(8,'Nguyễn Đăng H','Hà Nội'),(9,'Lê Văn I','Hà Nội'),(10,'Phạm Thị J','Hà Nam'),(11,'Nguyễn Văn K','Thanh Hoá'),(12,'Kiều Văn L','Thái Nguyên'),(13,'Bùi Thị M','Nghệ An');
+INSERT INTO `khachhang` VALUES (1,'Trần Nguyên Ba','Hà Nội'),(2,'Nguyễn Xuân An','Hà Nam'),(3,'Trần Minh Bảo','Thái Nguyên'),(4,'Phạm Nguyên','Hà Nội'),(5,'Thái Cao Vân','Thanh Hoá'),(6,'Bùi Quang Anh','Hà Nội'),(7,'Nguyễn Văn Hảo','Hà Đông'),(8,'Cao Văn Minh','Hà Nội'),(9,'Đinh Thanh Danh','Hà Nội'),(10,'Nguyễn Thị Dần','Hà Nam'),(11,'Phạm Thị Vân','Thanh Hoá'),(12,'Đinh Thị Kiều Diễm','Thái Nguyên'),(13,'Nguyễn Trần Văn Anh','Nghệ An');
 /*!40000 ALTER TABLE `khachhang` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
