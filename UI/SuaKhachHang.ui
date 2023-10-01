@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1420</width>
-    <height>659</height>
+    <width>1416</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="font">
@@ -68,7 +68,7 @@
       <property name="title">
        <string>Thông tin khách hàng</string>
       </property>
-      <widget class="QTextEdit" name="textEdit_8">
+      <widget class="QTextEdit" name="txt_QuyMo">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -87,7 +87,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_4">
+      <widget class="QTextEdit" name="txt_Sdt">
        <property name="geometry">
         <rect>
          <x>800</x>
@@ -103,7 +103,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_2">
+      <widget class="QTextEdit" name="txt_TenKH">
        <property name="geometry">
         <rect>
          <x>800</x>
@@ -119,7 +119,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_7">
+      <widget class="QTextEdit" name="txt_NguoiDaiDien">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -157,7 +157,7 @@
         <string>Tên khách hàng</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_5">
+      <widget class="QTextEdit" name="txt_NgheNghiep">
        <property name="geometry">
         <rect>
          <x>250</x>
@@ -173,7 +173,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_6">
+      <widget class="QTextEdit" name="txt_ThuNhap">
        <property name="geometry">
         <rect>
          <x>800</x>
@@ -246,7 +246,7 @@
         <string>Địa chỉ</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_3">
+      <widget class="QTextEdit" name="txt_DiaChi">
        <property name="geometry">
         <rect>
          <x>250</x>
@@ -319,7 +319,7 @@
         <string>Quy mô</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit">
+      <widget class="QTextEdit" name="txt_MaKH">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -358,7 +358,7 @@
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btn_Xoa">
       <property name="geometry">
        <rect>
         <x>990</x>
@@ -377,7 +377,7 @@
        <string>Xoá</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_Luu">
       <property name="geometry">
        <rect>
         <x>830</x>
@@ -396,7 +396,7 @@
        <string>Lưu</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="cbx_TypeKH">
       <property name="enabled">
        <bool>false</bool>
       </property>
@@ -425,7 +425,7 @@
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="btn_Huy">
       <property name="geometry">
        <rect>
         <x>1160</x>

@@ -6,6 +6,7 @@ from mysql.connector import Error
 from data.SqlHelper import create_db_connection, close_db_connection
 from common import common
 
+
 class ThemNhanVien(QtWidgets.QDialog):
     def __init__(self):
         self.db_connection = create_db_connection()
@@ -19,15 +20,18 @@ class ThemNhanVien(QtWidgets.QDialog):
 
         if self.db_connection:
             mycursor = self.db_connection.cursor()
-            res = mycursor.callproc("TaoMaNV", [0, ])            
+            res = mycursor.callproc("TaoMaNV", [0, ])
             self.textEdit.setPlainText(str(res[0]))
             self.textEdit.setDisabled(True)
             close_db_connection(mycursor)
+            self.db_connection.close()
 
         self.show()
 
     def on_click_save_button(self):
         try:
+            self.db_connection = create_db_connection()
+
             ma_nv = self.textEdit.toPlainText().rstrip()
             ten_nhan_vien = self.textEdit_2.toPlainText().rstrip()
             dia_chi = self.textEdit_3.toPlainText().rstrip()
@@ -35,9 +39,11 @@ class ThemNhanVien(QtWidgets.QDialog):
             cap_bac = self.textEdit_5.toPlainText().rstrip()
             if self.db_connection:
                 mycursor = self.db_connection.cursor()
-                mycursor.callproc("ThemNhanVien", [ma_nv, ten_nhan_vien, dia_chi, cap_bac, sdt, ])
+                mycursor.callproc(
+                    "ThemNhanVien", [ma_nv, ten_nhan_vien, dia_chi, cap_bac, sdt, ])
                 self.db_connection.commit()
                 close_db_connection(mycursor)
+                self.db_connection.close()
 
             msg = QtWidgets.QMessageBox()
             msg.setWindowTitle("Thông báo")
@@ -57,7 +63,6 @@ class ThemNhanVien(QtWidgets.QDialog):
 
 class SuaNhanVien(QtWidgets.QDialog):
     def __init__(self):
-        self.db_connection = create_db_connection()
         super(SuaNhanVien, self).__init__()
         uic.loadUi('ui/SuaNhanVien.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
@@ -73,6 +78,8 @@ class SuaNhanVien(QtWidgets.QDialog):
 
     def on_click_save_button(self):
         try:
+            self.db_connection = create_db_connection()
+
             ma_nv = self.textEdit.toPlainText().rstrip()
             ten_nhan_vien = self.textEdit_2.toPlainText().rstrip()
             dia_chi = self.textEdit_3.toPlainText().rstrip()
@@ -81,10 +88,12 @@ class SuaNhanVien(QtWidgets.QDialog):
 
             if self.db_connection:
                 mycursor = self.db_connection.cursor()
-                mycursor.callproc("SuaNhanVien", [ma_nv, ten_nhan_vien, dia_chi, cap_bac, sdt, ])
-                self.db_connection.commit()                
+                mycursor.callproc(
+                    "SuaNhanVien", [ma_nv, ten_nhan_vien, dia_chi, cap_bac, sdt, ])
+                self.db_connection.commit()
                 close_db_connection(mycursor)
-                
+                self.db_connection.close()
+
             msg = QtWidgets.QMessageBox()
             msg.setWindowTitle("Thông báo")
             msg.setText("Sửa thành công")
@@ -100,6 +109,8 @@ class SuaNhanVien(QtWidgets.QDialog):
 
     def on_click_delete_button(self):
         try:
+            self.db_connection = create_db_connection()
+
             ma_nv = self.textEdit.toPlainText().rstrip()
 
             if self.db_connection:
@@ -107,6 +118,7 @@ class SuaNhanVien(QtWidgets.QDialog):
                 mycursor.callproc("XoaNhanVien", [ma_nv, ])
                 self.db_connection.commit()
                 close_db_connection(mycursor)
+                self.db_connection.close()
 
             msg = QtWidgets.QMessageBox()
             msg.setWindowTitle("Thông báo")
@@ -127,7 +139,6 @@ class SuaNhanVien(QtWidgets.QDialog):
 
 class TimKiemNhanVien(QtWidgets.QDialog):
     def __init__(self):
-        self.db_connection = create_db_connection()
         super(TimKiemNhanVien, self).__init__()
         uic.loadUi('ui/TimKiemNhanVien.ui', self)
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
@@ -140,6 +151,8 @@ class TimKiemNhanVien(QtWidgets.QDialog):
 
     def on_click_search_button(self):
         try:
+            self.db_connection = create_db_connection()
+
             ma_nv = self.textEdit.toPlainText().rstrip()
             ten_nhan_vien = self.textEdit_2.toPlainText().rstrip()
             dia_chi = self.textEdit_3.toPlainText().rstrip()
@@ -148,7 +161,8 @@ class TimKiemNhanVien(QtWidgets.QDialog):
 
             if self.db_connection:
                 mycursor = self.db_connection.cursor()
-                mycursor.callproc("TimKiemNhanVien", [ma_nv, ten_nhan_vien, dia_chi, cap_bac, sdt, ])
+                mycursor.callproc("TimKiemNhanVien", [
+                                  ma_nv, ten_nhan_vien, dia_chi, cap_bac, sdt, ])
                 myresult = mycursor.stored_results()
                 self.tableWidget.setRowCount(0)
 
@@ -157,23 +171,34 @@ class TimKiemNhanVien(QtWidgets.QDialog):
                         rowPosition = self.tableWidget.rowCount()
                         self.tableWidget.insertRow(rowPosition)
 
-                        self.tableWidget.setItem(rowPosition, 0, QtWidgets.QTableWidgetItem(str(x[0])))
-                        self.tableWidget.setItem(rowPosition, 1, QtWidgets.QTableWidgetItem(str(x[1])))
-                        self.tableWidget.setItem(rowPosition, 2, QtWidgets.QTableWidgetItem(str(x[2])))
-                        self.tableWidget.setItem(rowPosition, 3, QtWidgets.QTableWidgetItem(str(x[5])))
-                        self.tableWidget.setItem(rowPosition, 4, QtWidgets.QTableWidgetItem(str(x[3])))
+                        self.tableWidget.setItem(
+                            rowPosition, 0, QtWidgets.QTableWidgetItem(str(x[0])))
+                        self.tableWidget.setItem(
+                            rowPosition, 1, QtWidgets.QTableWidgetItem(str(x[1])))
+                        self.tableWidget.setItem(
+                            rowPosition, 2, QtWidgets.QTableWidgetItem(str(x[2])))
+                        self.tableWidget.setItem(
+                            rowPosition, 3, QtWidgets.QTableWidgetItem(str(x[5])))
+                        self.tableWidget.setItem(
+                            rowPosition, 4, QtWidgets.QTableWidgetItem(str(x[3])))
 
-                        self.tableWidget.item(rowPosition, 0).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
-                        self.tableWidget.item(rowPosition, 1).setTextAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
-                        self.tableWidget.item(rowPosition, 2).setTextAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
-                        self.tableWidget.item(rowPosition, 3).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
-                        self.tableWidget.item(rowPosition, 4).setTextAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
-                
+                        self.tableWidget.item(rowPosition, 0).setTextAlignment(
+                            QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        self.tableWidget.item(rowPosition, 1).setTextAlignment(
+                            QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
+                        self.tableWidget.item(rowPosition, 2).setTextAlignment(
+                            QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
+                        self.tableWidget.item(rowPosition, 3).setTextAlignment(
+                            QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+                        self.tableWidget.item(rowPosition, 4).setTextAlignment(
+                            QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+
                 close_db_connection(mycursor)
-            
+                self.db_connection.close()
+
             common.autosizeColumns(self.tableWidget)
             self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-                
+
         except Error as e:
             msg = QtWidgets.QMessageBox()
             msg.setWindowTitle("Lỗi")
@@ -184,11 +209,16 @@ class TimKiemNhanVien(QtWidgets.QDialog):
         dialog = SuaNhanVien()
         dialog.openDialog = self
 
-        dialog.textEdit.setPlainText(self.tableWidget.item(item.row(), 0).text())
-        dialog.textEdit_2.setPlainText(self.tableWidget.item(item.row(), 1).text())
-        dialog.textEdit_3.setPlainText(self.tableWidget.item(item.row(), 2).text())
-        dialog.textEdit_4.setPlainText(self.tableWidget.item(item.row(), 3).text())
-        dialog.textEdit_5.setPlainText(self.tableWidget.item(item.row(), 4).text())
+        dialog.textEdit.setPlainText(
+            self.tableWidget.item(item.row(), 0).text())
+        dialog.textEdit_2.setPlainText(
+            self.tableWidget.item(item.row(), 1).text())
+        dialog.textEdit_3.setPlainText(
+            self.tableWidget.item(item.row(), 2).text())
+        dialog.textEdit_4.setPlainText(
+            self.tableWidget.item(item.row(), 3).text())
+        dialog.textEdit_5.setPlainText(
+            self.tableWidget.item(item.row(), 4).text())
 
         dialog.exec_()
 

@@ -3201,7 +3201,7 @@ BEGIN
 	update khachhang kh set Ten=Ten, DiaChi=DiaChi 
     where kh.MaKH=MaKH;
     
-    update khachhang_sdt set Sdt=Sdt
+    update khachhang_sdt kh set Sdt=Sdt
     where kh.MaKH=MaKH;
     
     update khachhangtochucdoanhnghiep set NguoiDaiDien=NguoiDaiDien, QuyMo=QuyMo 
@@ -3719,7 +3719,7 @@ BEGIN
     insert into khachhang_sdt (MaKH, Sdt) 
     values (MaKH, Sdt);
     
-    insert into khachhangtochucdoanhnghiep (MaKHCN, NguoiDaiDien, QuyMo) 
+    insert into khachhangtochucdoanhnghiep (MaKHTCDN, NguoiDaiDien, QuyMo) 
     values (MaKH, NguoiDaiDien, QuyMo);
 END ;;
 DELIMITER ;

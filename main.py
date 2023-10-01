@@ -71,7 +71,7 @@ class Ui(QtWidgets.QMainWindow):
         pixmap = QPixmap('assets/icon/hinhnen.jpg')
         label.setPixmap(pixmap)
         label.setAlignment(Qt.AlignCenter)
-        
+
         # Làm cho hình ảnh tự điều chỉnh để lấp đầy QLabel
         label.setScaledContents(True)
 
