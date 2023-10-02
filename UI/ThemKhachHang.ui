@@ -65,7 +65,7 @@
         <string>Tên</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_4">
+      <widget class="QTextEdit" name="txt_Sdt">
        <property name="geometry">
         <rect>
          <x>680</x>
@@ -90,7 +90,7 @@
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_5">
+      <widget class="QTextEdit" name="txt_NgheNghiep">
        <property name="geometry">
         <rect>
          <x>200</x>
@@ -182,7 +182,7 @@
         <string>Quy mô</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_2">
+      <widget class="QTextEdit" name="txt_Ten">
        <property name="geometry">
         <rect>
          <x>680</x>
@@ -198,7 +198,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_6">
+      <widget class="QTextEdit" name="txt_ThuNhap">
        <property name="geometry">
         <rect>
          <x>680</x>
@@ -233,7 +233,7 @@
         <string>Nghề nghiệp</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_8">
+      <widget class="QTextEdit" name="txt_QuyMo">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -271,7 +271,7 @@
         <string>Mã khách hàng</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_7">
+      <widget class="QTextEdit" name="txt_NguoiDaiDien">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -290,7 +290,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_1">
+      <widget class="QTextEdit" name="txt_MaKH">
        <property name="geometry">
         <rect>
          <x>200</x>
@@ -306,7 +306,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_3">
+      <widget class="QTextEdit" name="txt_DiaChi">
        <property name="geometry">
         <rect>
          <x>200</x>
@@ -364,7 +364,7 @@
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="cbx_TypeKH">
       <property name="geometry">
        <rect>
         <x>180</x>
@@ -390,7 +390,7 @@
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btn_Huy">
       <property name="geometry">
        <rect>
         <x>780</x>
@@ -409,7 +409,7 @@
        <string>Hủy</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_Save">
       <property name="geometry">
        <rect>
         <x>590</x>

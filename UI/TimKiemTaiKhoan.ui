@@ -46,7 +46,7 @@
       <property name="title">
        <string>Thông tin tìm kiếm</string>
       </property>
-      <widget class="QTextEdit" name="textEdit_3">
+      <widget class="QTextEdit" name="txt_MaNV">
        <property name="geometry">
         <rect>
          <x>270</x>
@@ -62,7 +62,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_2">
+      <widget class="QTextEdit" name="txt_MaKH">
        <property name="geometry">
         <rect>
          <x>270</x>
@@ -97,7 +97,7 @@
         <string>Mã nhân viên quản lý</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit">
+      <widget class="QTextEdit" name="txt_MaTK">
        <property name="geometry">
         <rect>
          <x>270</x>
@@ -152,7 +152,7 @@
        </property>
       </widget>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="cbx_TypeKH">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -181,7 +181,7 @@
        </property>
       </item>
      </widget>
-     <widget class="QComboBox" name="comboBox_2">
+     <widget class="QComboBox" name="cbxTypeTK">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -210,7 +210,7 @@
        </property>
       </item>
      </widget>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableWidget" name="tb_Result">
       <property name="geometry">
        <rect>
         <x>680</x>
@@ -256,7 +256,7 @@
        </property>
       </column>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_Search">
       <property name="geometry">
        <rect>
         <x>520</x>

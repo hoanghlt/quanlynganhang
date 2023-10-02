@@ -16,15 +16,15 @@ class ThemKhachHang(QtWidgets.QDialog):
         self.setWindowFlag(QtCore.Qt.WindowMinimizeButtonHint, True)
         self.setWindowIcon(QtGui.QIcon('icon.jpg'))
 
-        self.pushButton.clicked.connect(self.on_click_save_button)
-        self.pushButton_2.clicked.connect(self.on_click_cancel_button)
-        self.comboBox.currentTextChanged.connect(self.on_combobox_changed)
+        self.btn_Save.clicked.connect(self.on_click_save_button)
+        self.btn_Huy.clicked.connect(self.on_click_cancel_button)
+        self.cbx_TypeKH.currentTextChanged.connect(self.on_combobox_changed)
 
         if self.db_connection:
             mycursor = self.db_connection.cursor()
             res = mycursor.callproc("TaoMaKH", [0, ])
-            self.textEdit_1.setPlainText(str(res[0]))
-            self.textEdit_1.setDisabled(True)
+            self.txt_MaKH.setPlainText(str(res[0]))
+            self.txt_MaKH.setDisabled(True)
             close_db_connection(mycursor)
             self.db_connection.close()
 
@@ -32,36 +32,36 @@ class ThemKhachHang(QtWidgets.QDialog):
 
     def on_combobox_changed(self, value):
         if value == "Khách hàng cá nhân":
-            self.textEdit_5.setDisabled(False)
-            self.textEdit_6.setDisabled(False)
-            self.textEdit_7.setDisabled(True)
-            self.textEdit_8.setDisabled(True)
+            self.txt_NgheNghiep.setDisabled(False)
+            self.txt_ThuNhap.setDisabled(False)
+            self.txt_NguoiDaiDien.setDisabled(True)
+            self.txt_QuyMo.setDisabled(True)
 
-            self.textEdit_7.clear()
-            self.textEdit_8.clear()
+            self.txt_NguoiDaiDien.clear()
+            self.txt_QuyMo.clear()
         else:
-            self.textEdit_5.setDisabled(True)
-            self.textEdit_6.setDisabled(True)
-            self.textEdit_7.setDisabled(False)
-            self.textEdit_8.setDisabled(False)
+            self.txt_NgheNghiep.setDisabled(True)
+            self.txt_ThuNhap.setDisabled(True)
+            self.txt_NguoiDaiDien.setDisabled(False)
+            self.txt_QuyMo.setDisabled(False)
 
-            self.textEdit_5.clear()
-            self.textEdit_6.clear()
+            self.txt_NgheNghiep.clear()
+            self.txt_ThuNhap.clear()
 
     def on_click_save_button(self):
         try:
             self.db_connection = create_db_connection()
 
-            ma_kh = self.textEdit_1.toPlainText().rstrip()
-            ten_khach_hang = self.textEdit_2.toPlainText().rstrip()
-            dia_chi = self.textEdit_3.toPlainText().rstrip()
-            sdt = self.textEdit_4.toPlainText().rstrip()
-            nghe_nghiep = self.textEdit_5.toPlainText().rstrip()
-            thu_nhap = self.textEdit_6.toPlainText().rstrip()
-            dai_dien = self.textEdit_7.toPlainText().rstrip()
-            quy_mo = self.textEdit_8.toPlainText().rstrip()
+            ma_kh = self.txt_MaKH.toPlainText().rstrip()
+            ten_khach_hang = self.txt_Ten.toPlainText().rstrip()
+            dia_chi = self.txt_DiaChi.toPlainText().rstrip()
+            sdt = self.txt_Sdt.toPlainText().rstrip()
+            nghe_nghiep = self.txt_NgheNghiep.toPlainText().rstrip()
+            thu_nhap = self.txt_ThuNhap.toPlainText().rstrip()
+            dai_dien = self.txt_NguoiDaiDien.toPlainText().rstrip()
+            quy_mo = self.txt_QuyMo.toPlainText().rstrip()
 
-            if self.comboBox.currentText() == "Khách hàng cá nhân":
+            if self.cbx_TypeKH.currentText() == "Khách hàng cá nhân":
                 if self.db_connection:
                     mycursor = self.db_connection.cursor()
 
@@ -168,7 +168,7 @@ class SuaKhachHang(QtWidgets.QDialog):
             if self.db_connection:
                 mycursor = self.db_connection.cursor()
 
-                if self.comboBox.currentText() == "Khách hàng cá nhân":
+                if self.cbx_TypeKH.currentText() == "Khách hàng cá nhân":
                     mycursor.callproc("XoaKhachHangCaNhan", [ma_kh, ])
                 else:
                     mycursor.callproc(

@@ -28,7 +28,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_Save">
       <property name="geometry">
        <rect>
         <x>970</x>
@@ -65,7 +65,7 @@
       <property name="title">
        <string>Thông tin giao dịch</string>
       </property>
-      <widget class="QTextEdit" name="textEdit_9">
+      <widget class="QTextEdit" name="txt_MaNV">
        <property name="geometry">
         <rect>
          <x>780</x>
@@ -100,7 +100,7 @@
         <string>Phương thức</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_6">
+      <widget class="QTextEdit" name="txt_PhuongThuc">
        <property name="geometry">
         <rect>
          <x>780</x>
@@ -135,7 +135,7 @@
         <string>Mã khách hàng</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_3">
+      <widget class="QTextEdit" name="txt_MaTKTD">
        <property name="geometry">
         <rect>
          <x>230</x>
@@ -170,7 +170,7 @@
         <string>Mã giao dịch</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_7">
+      <widget class="QTextEdit" name="txt_MaKH">
        <property name="geometry">
         <rect>
          <x>780</x>
@@ -224,7 +224,7 @@
         <string>Mã nhân viên thực hiện</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_4">
+      <widget class="QTextEdit" name="txt_MaTKGT">
        <property name="geometry">
         <rect>
          <x>230</x>
@@ -240,7 +240,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_8">
+      <widget class="QTextEdit" name="txt_SoTien">
        <property name="geometry">
         <rect>
          <x>780</x>
@@ -294,7 +294,7 @@
         <string>Mã tài khoản vay tiền</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_5">
+      <widget class="QTextEdit" name="txt_MaTKVT">
        <property name="geometry">
         <rect>
          <x>230</x>
@@ -348,7 +348,7 @@
         <string>Mã tài khoản tín dụng</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit">
+      <widget class="QTextEdit" name="txt_MaGD">
        <property name="geometry">
         <rect>
          <x>230</x>
@@ -364,7 +364,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_2">
+      <widget class="QTextEdit" name="txt_LoaiGD">
        <property name="geometry">
         <rect>
          <x>230</x>
@@ -381,7 +381,7 @@
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btn_Huy">
       <property name="geometry">
        <rect>
         <x>1140</x>
@@ -422,7 +422,7 @@
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="cbx_TypeKH">
       <property name="geometry">
        <rect>
         <x>180</x>

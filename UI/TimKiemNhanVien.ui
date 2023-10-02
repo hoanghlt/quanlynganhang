@@ -28,7 +28,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableWidget" name="tb_Result">
       <property name="geometry">
        <rect>
         <x>600</x>
@@ -164,7 +164,7 @@
         <string>SĐT</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_2">
+      <widget class="QTextEdit" name="txt_TenNV">
        <property name="geometry">
         <rect>
          <x>180</x>
@@ -211,7 +211,7 @@
         <string>Tên nhân viên</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_4">
+      <widget class="QTextEdit" name="txt_Sdt">
        <property name="geometry">
         <rect>
          <x>180</x>
@@ -258,7 +258,7 @@
         <string>Địa chỉ</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_5">
+      <widget class="QTextEdit" name="txt_CapBac">
        <property name="geometry">
         <rect>
          <x>180</x>
@@ -305,7 +305,7 @@
         <string>Cấp bậc</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_3">
+      <widget class="QTextEdit" name="txt_DiaChi">
        <property name="geometry">
         <rect>
          <x>180</x>
@@ -327,7 +327,7 @@
         <set>Qt::ImhMultiLine</set>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit">
+      <widget class="QTextEdit" name="txt_MaNV">
        <property name="geometry">
         <rect>
          <x>180</x>
@@ -375,7 +375,7 @@
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_Search">
       <property name="geometry">
        <rect>
         <x>450</x>

@@ -28,7 +28,7 @@
        <height>0</height>
       </size>
      </property>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_Save">
       <property name="geometry">
        <rect>
         <x>510</x>
@@ -65,7 +65,7 @@
       <property name="title">
        <string>Thông tin nhân viên</string>
       </property>
-      <widget class="QTextEdit" name="textEdit_4">
+      <widget class="QTextEdit" name="txt_Sdt">
        <property name="geometry">
         <rect>
          <x>240</x>
@@ -81,7 +81,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_2">
+      <widget class="QTextEdit" name="txt_Ten">
        <property name="geometry">
         <rect>
          <x>240</x>
@@ -100,7 +100,7 @@
         <enum>Qt::LeftToRight</enum>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit">
+      <widget class="QTextEdit" name="txt_MaNV">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -214,7 +214,7 @@
         <string>Cấp bậc</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_5">
+      <widget class="QTextEdit" name="txt_CapBac">
        <property name="geometry">
         <rect>
          <x>240</x>
@@ -230,7 +230,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_3">
+      <widget class="QTextEdit" name="txt_DiaChi">
        <property name="geometry">
         <rect>
          <x>240</x>
@@ -247,7 +247,7 @@
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="btn_Huy">
       <property name="geometry">
        <rect>
         <x>870</x>
@@ -266,7 +266,7 @@
        <string>Hủy</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btn_Xoa">
       <property name="geometry">
        <rect>
         <x>690</x>

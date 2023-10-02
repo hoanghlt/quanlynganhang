@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1420</width>
-    <height>659</height>
+    <height>675</height>
    </rect>
   </property>
   <property name="font">
@@ -27,7 +27,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_Search">
       <property name="geometry">
        <rect>
         <x>390</x>
@@ -68,7 +68,7 @@
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableWidget" name="tb_Result">
       <property name="geometry">
        <rect>
         <x>640</x>
@@ -143,7 +143,7 @@
         <string>Ngày kết thúc</string>
        </property>
       </widget>
-      <widget class="QDateEdit" name="dateEdit_2">
+      <widget class="QDateEdit" name="dtp_EndTime">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -159,7 +159,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QDateEdit" name="dateEdit">
+      <widget class="QDateEdit" name="dtp_StartTime">
        <property name="geometry">
         <rect>
          <x>190</x>

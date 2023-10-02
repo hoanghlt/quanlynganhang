@@ -28,7 +28,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="cbx_TypeKH">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -57,7 +57,7 @@
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btn_Huy">
       <property name="geometry">
        <rect>
         <x>1070</x>
@@ -113,7 +113,7 @@
         <string>Mã nhân viên</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_3">
+      <widget class="QTextEdit" name="txt_HanMuc">
        <property name="geometry">
         <rect>
          <x>710</x>
@@ -148,7 +148,7 @@
         <string>Số nợ</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_8">
+      <widget class="QTextEdit" name="txt_MaNV">
        <property name="geometry">
         <rect>
          <x>210</x>
@@ -202,7 +202,7 @@
         <string>Lãi suất</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_5">
+      <widget class="QTextEdit" name="txt_SoDu">
        <property name="geometry">
         <rect>
          <x>710</x>
@@ -218,7 +218,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_2">
+      <widget class="QTextEdit" name="txt_HangTK">
        <property name="geometry">
         <rect>
          <x>210</x>
@@ -234,7 +234,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit">
+      <widget class="QTextEdit" name="txt_MaTK">
        <property name="geometry">
         <rect>
          <x>210</x>
@@ -288,7 +288,7 @@
         <string>Hạn mức</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_6">
+      <widget class="QTextEdit" name="txt_SoNo">
        <property name="geometry">
         <rect>
          <x>710</x>
@@ -304,7 +304,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_7">
+      <widget class="QTextEdit" name="txt_MaKH">
        <property name="geometry">
         <rect>
          <x>210</x>
@@ -358,7 +358,7 @@
         <string>Mã tài khoản</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_4">
+      <widget class="QTextEdit" name="txt_LaiSuat">
        <property name="geometry">
         <rect>
          <x>710</x>
@@ -397,7 +397,7 @@
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_2">
+     <widget class="QComboBox" name="cbx_TypeTK">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -426,7 +426,7 @@
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_Save">
       <property name="geometry">
        <rect>
         <x>890</x>

@@ -28,7 +28,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="cbx_TypeKH">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -54,7 +54,7 @@
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_Search">
       <property name="geometry">
        <rect>
         <x>420</x>
@@ -151,7 +151,7 @@
         <string>Mã nhân viên thực hiện</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_2">
+      <widget class="QTextEdit" name="txt_MaKH">
        <property name="geometry">
         <rect>
          <x>200</x>
@@ -205,7 +205,7 @@
         <string>Mã giao dịch</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_4">
+      <widget class="QTextEdit" name="txt_MaTK">
        <property name="geometry">
         <rect>
          <x>200</x>
@@ -221,7 +221,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_3">
+      <widget class="QTextEdit" name="txt_MaNV">
        <property name="geometry">
         <rect>
          <x>200</x>
@@ -237,7 +237,7 @@
         </font>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit">
+      <widget class="QTextEdit" name="txt_MaGD">
        <property name="geometry">
         <rect>
          <x>200</x>
@@ -254,7 +254,7 @@
        </property>
       </widget>
      </widget>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableWidget" name="tb_Result">
       <property name="geometry">
        <rect>
         <x>570</x>
